@@ -3,7 +3,7 @@
 html,
 body,
 #app {
-  height: 100%;
+  transition: all 0.2s ease;
   margin: 0;
   padding: 0;
 }
@@ -17,7 +17,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  @apply bg-teal-600 opacity-75;
+  @apply bg-blue-600 opacity-75;
 
   position: fixed;
   z-index: 1031;
@@ -29,15 +29,21 @@ html.dark {
 }
 
 .btn {
-  @apply px-4 py-1 rounded inline-block
-    bg-teal-600 text-white cursor-pointer
-    hover:bg-teal-700
-    disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50;
+  height: 2rem;
+  min-width: 6rem;
+
+  @apply px-4 rounded inline-flex justify-center items-center
+    bg-blue-600 text-white cursor-pointer bg-opacity-50
+    hover:shadow
+    transition
+    disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50 disabled:bg-opacity-30
+    active:outline-none
+    ;
 }
 
 .icon-btn {
   @apply inline-block cursor-pointer select-none
     opacity-75 transition duration-200 ease-in-out
-    hover:opacity-100 hover:text-teal-600;
+    hover:opacity-100 hover:text-blue-600;
   font-size: 0.9em;
 }

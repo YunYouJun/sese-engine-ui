@@ -1,58 +1,56 @@
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user'
+import { useSearchStore } from '~/stores/search'
 
-const user = useUserStore()
-const name = ref(user.savedName)
+const search = useSearchStore()
+const keyword = ref(search.savedKeyword)
 
 const router = useRouter()
 const go = () => {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
+  if (keyword.value)
+    router.push(`/search?q=${encodeURIComponent(keyword.value)}`)
 }
 
 const { t } = useI18n()
 </script>
 
 <template>
-  <div>
-    <p class="text-4xl">
-      <carbon-campsite class="inline-block" />
-    </p>
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
-      </a>
-    </p>
-    <p>
-      <em class="text-sm opacity-75">{{ t('intro.desc') }}</em>
+  <div class="flex flex-col justify-center items-center" h="full">
+    <Settings />
+
+    <p class="text-6xl">
+      <i-ri-cloud-line class="inline-block" />
     </p>
 
-    <div class="py-4" />
-
-    <input
-      id="input"
-      v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-      :aria-label="t('intro.whats-your-name')"
-      type="text"
-      autocomplete="false"
-      p="x-4 y-2"
-      w="250px"
-      text="center"
-      bg="transparent"
+    <div
+      class="wrapper relative flex justify-center items-center"
+      w="140"
+      p="2"
+      m="y-4"
       border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
+      rounded="full"
     >
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
+      <i-ri-search-line class="inline-flex" />
+      <input
+        id="input"
+        v-model="keyword"
+        w="122"
+        m="x-3"
+        :aria-label="t('placeholder.search')"
+        type="text"
+        autocomplete="false"
+        bg="transparent"
+        outline="none active:none"
+        @keydown.enter="go"
+      >
+    </div>
 
     <div>
       <button
         class="m-3 text-sm btn"
-        :disabled="!name"
+        :disabled="!keyword"
         @click="go"
       >
-        {{ t('button.go') }}
+        {{ t('button.search') }}
       </button>
     </div>
   </div>

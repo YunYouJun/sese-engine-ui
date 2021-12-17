@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user'
+import { useUserStore } from '~/stores/search'
 
 const props = defineProps<{ name: string }>()
 const router = useRouter()

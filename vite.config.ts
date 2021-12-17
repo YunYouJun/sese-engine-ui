@@ -61,7 +61,7 @@ export default defineConfig({
         // auto import icons
         // https://github.com/antfu/unplugin-icons
         IconsResolver({
-          componentPrefix: '',
+          // componentPrefix: '',
           // enabledCollections: ['carbon']
         }),
       ],

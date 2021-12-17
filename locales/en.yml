@@ -5,6 +5,8 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
+  search: Search
+  
 intro:
   desc: Opinionated Vite Starter Template
   dynamic-route: Demo of dynamic route
@@ -12,3 +14,6 @@ intro:
   aka: Also known as
   whats-your-name: What's your name?
 not-found: Not found
+
+placeholder:
+  search: Search
