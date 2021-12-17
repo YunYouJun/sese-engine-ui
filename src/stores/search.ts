@@ -7,6 +7,15 @@ export const useSearchStore = defineStore('search', () => {
   const usedKeywords = computed(() => Array.from(previousKeywords.value))
   const otherKeywords = computed(() => usedKeywords.value.filter(name => name !== savedKeyword.value))
 
+  const router = useRouter()
+
+  const go = (keyword: string) => {
+    if (keyword) {
+      setNewKeyword(keyword)
+      router.push(`/search?q=${encodeURIComponent(keyword)}`)
+    }
+  }
+
   /**
    * Changes the current name of the user and saves the one that was used
    * before.
@@ -24,6 +33,8 @@ export const useSearchStore = defineStore('search', () => {
     setNewKeyword,
     otherKeywords,
     savedKeyword,
+
+    go,
   }
 })
 

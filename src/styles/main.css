@@ -33,10 +33,10 @@ html.dark {
   min-width: 6rem;
 
   @apply px-4 rounded inline-flex justify-center items-center
-    bg-blue-600 text-white cursor-pointer bg-opacity-50
-    hover:shadow
+    bg-blue-600 text-white cursor-pointer bg-opacity-60
+    hover:shadow-md
     transition
-    disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50 disabled:bg-opacity-30
+    disabled:cursor-default disabled:bg-gray-500 disabled:opacity-50 disabled:bg-opacity-30 disabled:hover:shadow-transparent
     active:outline-none
     ;
 }

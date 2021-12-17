@@ -5,8 +5,8 @@ button:
   home: 首页
   toggle_dark: 切换深色模式
   toggle_langs: 切换语言
-  search: 搜索
-
+  search: 开始色色
+  
 intro:
   desc: 固执己见的 Vite 项目模板
   dynamic-route: 动态路由演示
@@ -16,4 +16,4 @@ intro:
 not-found: 未找到页面
 
 placeholder:
-  search: 开始色色
+  search: 搜索

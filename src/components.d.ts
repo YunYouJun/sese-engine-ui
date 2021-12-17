@@ -5,7 +5,11 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Footer: typeof import('./components/Footer.vue')['default']
+    ICarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
+    InputBox: typeof import('./components/InputBox.vue')['default']
     IRiCloudLine: typeof import('~icons/ri/cloud-line')['default']
+    IRiGithubLine: typeof import('~icons/ri/github-line')['default']
+    IRiLogoGithub: typeof import('~icons/ri/logo-github')['default']
     IRiMoonLine: typeof import('~icons/ri/moon-line')['default']
     IRiSearchLine: typeof import('~icons/ri/search-line')['default']
     IRiSunLine: typeof import('~icons/ri/sun-line')['default']

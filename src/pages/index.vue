@@ -4,12 +4,6 @@ import { useSearchStore } from '~/stores/search'
 const search = useSearchStore()
 const keyword = ref(search.savedKeyword)
 
-const router = useRouter()
-const go = () => {
-  if (keyword.value)
-    router.push(`/search?q=${encodeURIComponent(keyword.value)}`)
-}
-
 const { t } = useI18n()
 </script>
 
@@ -21,34 +15,13 @@ const { t } = useI18n()
       <i-ri-cloud-line class="inline-block" />
     </p>
 
-    <div
-      class="wrapper relative flex justify-center items-center"
-      w="140"
-      p="2"
-      m="y-4"
-      border="~ rounded gray-200 dark:gray-700"
-      rounded="full"
-    >
-      <i-ri-search-line class="inline-flex" />
-      <input
-        id="input"
-        v-model="keyword"
-        w="122"
-        m="x-3"
-        :aria-label="t('placeholder.search')"
-        type="text"
-        autocomplete="false"
-        bg="transparent"
-        outline="none active:none"
-        @keydown.enter="go"
-      >
-    </div>
+    <InputBox v-model="keyword" :enter="()=>{search.go(keyword)}" />
 
     <div>
       <button
         class="m-3 text-sm btn"
         :disabled="!keyword"
-        @click="go"
+        @click="search.go(keyword)"
       >
         {{ t('button.search') }}
       </button>
