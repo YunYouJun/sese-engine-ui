@@ -9,7 +9,6 @@ declare module 'vue' {
     InputBox: typeof import('./components/InputBox.vue')['default']
     IRiCloudLine: typeof import('~icons/ri/cloud-line')['default']
     IRiGithubLine: typeof import('~icons/ri/github-line')['default']
-    IRiLogoGithub: typeof import('~icons/ri/logo-github')['default']
     IRiMoonLine: typeof import('~icons/ri/moon-line')['default']
     IRiSearchLine: typeof import('~icons/ri/search-line')['default']
     IRiSunLine: typeof import('~icons/ri/sun-line')['default']
