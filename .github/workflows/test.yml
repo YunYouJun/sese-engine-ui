@@ -22,12 +22,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.24.3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmmirror.com/
+          cache: "pnpm"
 
-      - run: npm i -g pnpm && pnpm install
+      - run: pnpm install
 
       - name: Lint
         run: pnpm run lint
