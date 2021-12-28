@@ -9,10 +9,8 @@ const { t } = useI18n()
 
 <template>
   <div class="flex flex-col justify-center items-center" h="full">
-    <Settings />
-
     <p class="text-6xl">
-      <i-ri-cloud-line class="inline-block" />
+      <i-ri-font-color class="inline-block" />
     </p>
 
     <InputBox v-model="keyword" :enter="()=>{search.go(keyword)}" />

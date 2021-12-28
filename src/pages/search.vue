@@ -25,8 +25,6 @@ onBeforeMount(async() => {
   searchByParams()
 })
 
-const logoUrl = 'https://yyj.moe/logo.png'
-
 const curPage = ref(slice.value ? (parseInt(slice.value?.split(':')[0]) / pageNumber.value) + 1 : 1)
 
 const goToPage = (page: number) => {
@@ -43,12 +41,14 @@ const goToPage = (page: number) => {
   searchByParams()
 }
 
+// const logoUrl = 'https://yyj.moe/logo.png'
 </script>
 
 <template>
-  <div p="l-4" class="flex justify-start items-center">
-    <a class="cursor-pointer" @click="()=>{router.push('/')}">
-      <img class="w-10 inline-flex" :src="logoUrl" title="Logo">
+  <div p="l-4" class="flex justify-start items-center <sm:mt-8">
+    <a class="cursor-pointer inline-flex justify-center" @click="()=>{router.push('/')}">
+      <i-ri-font-color text="2xl" />
+      <!-- <img class="w-10 inline-flex" :src="logoUrl" title="Logo"> -->
     </a>
     <InputBox v-model="keyword" class="inline-flex ml-6 shadow transition hover:shadow-md <sm:ml-4" :enter="()=>{searchStore.go(keyword)}" />
   </div>
@@ -59,7 +59,7 @@ const goToPage = (page: number) => {
     <div v-for="(item, i) in searchData['结果']" :key="i" text="left" m="b-4">
       <a :href="item['网址']" target="_blank"><cite class="not-italic" text="xs">{{ item['网址'] }}</cite></a>
       <template v-if="item['信息']">
-        <a :href="item['网址']" target="_blank" class="text-lg text-blue-900 hover:underline">
+        <a :href="item['网址']" target="_blank" class="text-lg text-blue-900 hover:underline dark:text-blue-500">
           <h3 class="top-0">
             {{ item['信息']['标题'] }}
           </h3>
@@ -77,7 +77,7 @@ const goToPage = (page: number) => {
     </div>
 
     <div m="t-6" class="pagination-container">
-      <span v-for="i in 10" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black' : 'text-blue-800 cursor-pointer hover:underline'" text="sm" @click="goToPage(i)">
+      <span v-for="i in 10" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black dark:text-white' : 'text-blue-800 dark:text-blue-500 cursor-pointer hover:underline'" text="sm" @click="goToPage(i)">
         {{ i }}
       </span>
     </div>

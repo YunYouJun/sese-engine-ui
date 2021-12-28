@@ -5,7 +5,7 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
-  search: Search
+  search: Se Search
   
 intro:
   desc: Opinionated Vite Starter Template

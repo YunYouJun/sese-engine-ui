@@ -8,6 +8,8 @@ declare module 'vue' {
     InputBox: typeof import('./components/InputBox.vue')['default']
     IRiAlertLine: typeof import('~icons/ri/alert-line')['default']
     IRiCloudLine: typeof import('~icons/ri/cloud-line')['default']
+    IRiFontColor: typeof import('~icons/ri/font-color')['default']
+    IRiFontColorLine: typeof import('~icons/ri/font-color-line')['default']
     IRiMoonLine: typeof import('~icons/ri/moon-line')['default']
     IRiSearchLine: typeof import('~icons/ri/search-line')['default']
     IRiSunLine: typeof import('~icons/ri/sun-line')['default']

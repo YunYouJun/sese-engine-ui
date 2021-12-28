@@ -9,7 +9,7 @@ export const useSearchStore = defineStore('search', () => {
 
   const router = useRouter()
 
-  const go = (keyword: string) => {
+  const go = (keyword: string | undefined) => {
     if (keyword) {
       setNewKeyword(keyword)
       router.push(`/search?q=${encodeURIComponent(keyword)}`)
