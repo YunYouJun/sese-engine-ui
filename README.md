@@ -8,6 +8,10 @@
 
 <br>
 
+> 色色引擎的 UI
+
+Se 是 Search 的缩写，所以就是色色引擎。开始搜索就是「开始色色」。
+
 ## Features
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness

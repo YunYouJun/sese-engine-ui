@@ -6,14 +6,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     Footer: typeof import('./components/Footer.vue')['default']
     InputBox: typeof import('./components/InputBox.vue')['default']
-    IRiAlertLine: typeof import('~icons/ri/alert-line')['default']
-    IRiCloudLine: typeof import('~icons/ri/cloud-line')['default']
-    IRiFontColor: typeof import('~icons/ri/font-color')['default']
-    IRiFontColorLine: typeof import('~icons/ri/font-color-line')['default']
-    IRiMoonLine: typeof import('~icons/ri/moon-line')['default']
-    IRiSearchLine: typeof import('~icons/ri/search-line')['default']
-    IRiSunLine: typeof import('~icons/ri/sun-line')['default']
-    IRiTranslate: typeof import('~icons/ri/translate')['default']
     README: typeof import('./components/README.md')['default']
     Settings: typeof import('./components/Settings.vue')['default']
   }

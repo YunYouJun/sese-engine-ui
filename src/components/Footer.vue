@@ -8,7 +8,7 @@ const { t } = useI18n()
       <i-carbon-dicom-overlay />
     </router-link>
 
-    <a class="icon-btn mx-2" rel="noreferrer" href="https://github.com/YunYouJun/yun-search-ui" target="_blank" title="GitHub">
+    <a class="icon-btn mx-2" rel="noreferrer" href="https://github.com/YunYouJun/sese-engine-ui" target="_blank" title="GitHub">
       <i-ri-github-line />
     </a>
   </nav>
