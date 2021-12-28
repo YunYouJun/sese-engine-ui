@@ -28,7 +28,7 @@ defineEmits(['update:modelValue'])
       autocomplete="false"
       bg="transparent"
       outline="none active:none"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="$emit('update:modelValue', ($event.target as any).value)"
       @keydown.enter="enter"
     >
   </div>

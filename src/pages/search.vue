@@ -5,7 +5,7 @@ import { useSearchStore } from '~/stores/search'
 const route = useRoute()
 
 const searchStore = useSearchStore()
-const keyword = ref(searchStore.savedKeyword || route.query.q?.toString())
+const keyword = ref(searchStore.savedKeyword || route.query.q?.toString() || '')
 const slice = ref(route.query.slice?.toString())
 const pageNumber = ref(7)
 
