@@ -23,7 +23,7 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.14.1",
+    "@antfu/eslint-config": "^0.14.2",
     "@iconify-json/carbon": "^1.0.12",
     "@iconify-json/ri": "^1.0.2",
     "@intlify/vite-plugin-vue-i18n": "^3.2.1",
@@ -47,12 +47,12 @@
     "vite": "^2.7.7",
     "vite-plugin-inspect": "^0.3.11",
     "vite-plugin-md": "^0.11.7",
-    "vite-plugin-pages": "^0.19.7",
+    "vite-plugin-pages": "^0.19.8",
     "vite-plugin-pwa": "^0.11.12",
     "vite-plugin-vue-layouts": "^0.5.0",
     "vite-plugin-windicss": "^1.6.1",
     "vite-ssg": "^0.17.2",
-    "vitest": "^0.0.115",
+    "vitest": "^0.0.118",
     "vue-tsc": "^0.30.1"
   }
 }
