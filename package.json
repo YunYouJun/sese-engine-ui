@@ -44,7 +44,7 @@
     "unplugin-auto-import": "^0.5.5",
     "unplugin-icons": "^0.13.0",
     "unplugin-vue-components": "^0.17.11",
-    "vite": "^2.7.7",
+    "vite": "^2.7.9",
     "vite-plugin-inspect": "^0.3.11",
     "vite-plugin-md": "^0.11.7",
     "vite-plugin-pages": "^0.19.8",
@@ -52,7 +52,7 @@
     "vite-plugin-vue-layouts": "^0.5.0",
     "vite-plugin-windicss": "^1.6.1",
     "vite-ssg": "^0.17.2",
-    "vitest": "^0.0.118",
+    "vitest": "^0.0.120",
     "vue-tsc": "^0.30.1"
   }
 }
