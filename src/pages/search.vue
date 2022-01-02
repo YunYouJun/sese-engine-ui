@@ -1,7 +1,10 @@
 <script setup lang="ts">
+// @ts-ignore
+import { useLoading } from 'vue-loading-overlay'
 import { search } from '~/api'
 import { useSearchStore } from '~/stores/search'
 
+const $loading = useLoading()
 const route = useRoute()
 
 const searchStore = useSearchStore()
@@ -16,10 +19,12 @@ const searchData = ref()
 const router = useRouter()
 
 const searchByParams = async() => {
+  const loader = $loading.show()
   const data = await search({
     q: keyword.value,
     slice: slice.value,
   })
+  loader.hide()
   searchData.value = data
 }
 
