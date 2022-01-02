@@ -5,7 +5,9 @@ import { useSearchStore } from '~/stores/search'
 const route = useRoute()
 
 const searchStore = useSearchStore()
-const keyword = ref(searchStore.savedKeyword || route.query.q?.toString() || '')
+searchStore.setNewKeyword(route.query.q?.toString() || '')
+
+const keyword = ref(searchStore.savedKeyword)
 const slice = ref(route.query.slice?.toString())
 const pageNumber = ref(7)
 
@@ -41,7 +43,9 @@ const goToPage = (page: number) => {
   searchByParams()
 }
 
-// const logoUrl = 'https://yyj.moe/logo.png'
+watch(() => searchStore.savedKeyword, () => {
+  searchByParams()
+})
 </script>
 
 <template>

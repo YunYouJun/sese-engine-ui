@@ -1,5 +1,9 @@
 <template>
   <div class="absolute top-5 right-5">
+    <a class="icon-btn mx-2" title="GitHub" href="https://github.com/YunYouJun/sese-engine-ui" target="_blank">
+      <i-ri-github-line />
+    </a>
+
     <a class="icon-btn mx-2" :title="t('button.toggle_langs')" @click="toggleLocales">
       <i-ri-translate class="transform" :class="isEn ? 'rotate-y-180' : ''" />
     </a>
