@@ -61,8 +61,11 @@ const displayedPages = computed(() => {
 })
 
 const searchKeyword = () => {
+  // reset
   curPage.value = 1
+  slice.value = `0:${pageNumber.value}`
   enter(keyword.value)
+  searchByParams()
 }
 
 /**
@@ -118,7 +121,7 @@ const highlightedText = (content: string) => {
         <span v-if="curPage > 1" class="page-link" text="sm" p="r-1" m="r-1" @click="goToPage(curPage - 1)">
           <i-ri-arrow-left-line />
         </span>
-        <span v-for="i in displayedPages" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black dark:text-white' : 'text-blue-800 dark:text-blue-500 cursor-pointer hover:underline'" text="sm" @click="curPage === i ? null : goToPage(i)">
+        <span v-for="i in displayedPages" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black dark:text-white' : 'text-blue-600 dark:text-blue-500 cursor-pointer hover:underline'" text="sm" @click="curPage === i ? null : goToPage(i)">
           {{ i }}
         </span>
         <span v-if="curPage < displayedPages" class="page-link" text="sm" p="l-1" m="l-1" @click="goToPage(curPage + 1)">
