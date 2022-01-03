@@ -36,7 +36,7 @@ specifiers:
   vite-plugin-vue-layouts: ^0.5.0
   vite-plugin-windicss: ^1.6.1
   vite-ssg: ^0.17.5
-  vitest: ^0.0.127
+  vitest: ^0.0.128
   vue: ^3.2.26
   vue-demi: ^0.12.1
   vue-i18n: ^9.1.9
@@ -85,7 +85,7 @@ devDependencies:
   vite-plugin-vue-layouts: 0.5.0_356ec39c15e6be83b5da8ae2fd7c7b8a
   vite-plugin-windicss: 1.6.1_vite@2.7.10
   vite-ssg: 0.17.5_42d81a8ea2b1cdff2d68d95d507a826b
-  vitest: 0.0.127_sass@1.45.2
+  vitest: 0.0.128_sass@1.45.2
   vue-tsc: 0.30.1_typescript@4.5.4
 
 packages:
@@ -6349,8 +6349,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.0.127_sass@1.45.2:
-    resolution: {integrity: sha512-FAmM07fmSr4UZiQgBIvShewiQeUxj5RxzGkgKjAfNygABm2iZmeR2gm6syGzx3HYsbFWMV9oYAjcnE7ZK5IGoQ==, tarball: vitest/download/vitest-0.0.127.tgz}
+  /vitest/0.0.128_sass@1.45.2:
+    resolution: {integrity: sha512-a6rpX9HEr/bu0vPnCHj6UyXVxiiqP8mcvn776sw06zBNvMCD66aB82IxzM17kLs1NyRLtngthMMmwZuOBLIX3g==, tarball: vitest/download/vitest-0.0.128.tgz}
     engines: {node: '>=14.14.0'}
     hasBin: true
     peerDependencies:

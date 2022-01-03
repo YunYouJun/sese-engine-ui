@@ -11,6 +11,6 @@ export interface SearchResult {
 
 export interface SearchData {
   分词: string[]
-  结果: SearchData[]
+  结果: SearchResult[]
   总数: number
 }
