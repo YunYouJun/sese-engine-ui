@@ -1,8 +1,11 @@
 <script setup lang="ts">
 // @ts-ignore
-import { useLoading } from 'vue-loading-overlay'
+import VueLoading from 'vue-loading-overlay'
 import { search } from '~/api'
 import { useSearchStore } from '~/stores/search'
+
+// @ts-ignore
+const { useLoading } = VueLoading
 
 const $loading = useLoading()
 const route = useRoute()
