@@ -20,7 +20,6 @@ const { t } = useI18n()
     <div>
       <button
         class="m-3 text-sm btn"
-        :disabled="!keyword"
         @click="enter(keyword)"
       >
         {{ t('button.search') }}
