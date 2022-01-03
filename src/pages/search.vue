@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { search } from '~/api'
+import type { SearchData } from '~/api/types'
 import { useEnter } from '~/composables/search'
 import { useSearchStore } from '~/stores/search'
 
@@ -13,7 +14,7 @@ const keyword = ref(searchStore.savedKeyword)
 const slice = ref(route.query.slice?.toString())
 const pageNumber = ref(10)
 
-const searchData = ref()
+const searchData = ref<SearchData>()
 
 const router = useRouter()
 
@@ -52,7 +53,7 @@ watch(() => searchStore.savedKeyword, () => {
 })
 
 const displayedPages = computed(() => {
-  if (searchData.value['总数']) {
+  if (searchData.value && searchData.value['总数']) {
     const pages = Math.ceil(searchData.value['总数'] / pageNumber.value)
     return pages <= 10 ? pages : 10
   }
@@ -63,13 +64,26 @@ const searchKeyword = () => {
   curPage.value = 1
   enter(keyword.value)
 }
+
+/**
+ * 高亮文本
+ */
+const highlightedText = (content: string) => {
+  let result = content
+  const keywords = (searchData.value && searchData.value['分词']) || [keyword.value]
+  keywords.forEach((item) => {
+    const re = new RegExp(item, 'g')
+    result = result.replace(re, `<em class="highlight">${keyword.value}</em>`)
+  })
+  return result
+}
 </script>
 
 <template>
   <Loading v-show="searchStore.isLoading" />
   <div p="2">
-    <div p="l-4" class="flex justify-start items-center <sm:mt-8">
-      <a class="cursor-pointer inline-flex justify-center" @click="()=>{router.push('/')}">
+    <div p="l-4 <sm:l-0" class="flex justify-start items-center <sm:mt-8">
+      <a class="cursor-pointer inline-flex justify-center <sm:absolute top-4 left-4" @click="()=>{router.push('/')}">
         <i-ri-font-color text="2xl" />
       <!-- <img class="w-10 inline-flex" :src="logoUrl" title="Logo"> -->
       </a>
@@ -90,9 +104,7 @@ const searchKeyword = () => {
               {{ item['信息']['标题'] }}
             </h3>
           </a>
-          <p text="sm">
-            {{ item['信息']['描述'] || item['信息']['文本'] }}
-          </p>
+          <p text="sm" v-html="highlightedText(item['信息']['描述'] || item['信息']['文本'])" />
         </template>
         <div v-else>
           <div class="inline-flex justify-start items-center border" p="1" m="1">
@@ -103,7 +115,7 @@ const searchKeyword = () => {
       </div>
 
       <div m="t-6" class="pagination-container">
-        <span v-for="i in displayedPages" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black dark:text-white' : 'text-blue-800 dark:text-blue-500 cursor-pointer hover:underline'" text="sm" @click="goToPage(i)">
+        <span v-for="i in displayedPages" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black dark:text-white' : 'text-blue-800 dark:text-blue-500 cursor-pointer hover:underline'" text="sm" @click="curPage === i ? null : goToPage(i)">
           {{ i }}
         </span>
       </div>
