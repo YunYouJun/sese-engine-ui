@@ -16,6 +16,8 @@ export const useSearchStore = defineStore('search', () => {
     }
   }
 
+  const [isLoading, toggleLoading] = useToggle(false)
+
   /**
    * Changes the current name of the user and saves the one that was used
    * before.
@@ -34,7 +36,10 @@ export const useSearchStore = defineStore('search', () => {
     otherKeywords,
     savedKeyword,
 
+    isLoading,
+
     go,
+    toggleLoading,
   }
 })
 

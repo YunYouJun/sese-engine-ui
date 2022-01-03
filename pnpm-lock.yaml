@@ -40,7 +40,6 @@ specifiers:
   vue: ^3.2.26
   vue-demi: ^0.12.1
   vue-i18n: ^9.1.9
-  vue-loading-overlay: ^5.0.1
   vue-router: ^4.0.12
   vue-tsc: ^0.30.1
 
@@ -54,7 +53,6 @@ dependencies:
   vue: 3.2.26
   vue-demi: 0.12.1_vue@3.2.26
   vue-i18n: 9.1.9_vue@3.2.26
-  vue-loading-overlay: 5.0.1_vue@3.2.26
   vue-router: 4.0.12_vue@3.2.26
 
 devDependencies:
@@ -6547,15 +6545,6 @@ packages:
       '@intlify/shared': 9.1.9
       '@intlify/vue-devtools': 9.1.9
       '@vue/devtools-api': 6.0.0-beta.21.1
-      vue: 3.2.26
-    dev: false
-
-  /vue-loading-overlay/5.0.1_vue@3.2.26:
-    resolution: {integrity: sha512-usMt6bhcNxIRCIxyU86loKTZVKRui9KfwUWJQzJ2OOHe7fg1/eMEU4Fo7uXz4howrJ/WqMdjnxulkRayCG/BiQ==, tarball: vue-loading-overlay/download/vue-loading-overlay-5.0.1.tgz}
-    engines: {node: '>=12.13.0'}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
       vue: 3.2.26
     dev: false
 

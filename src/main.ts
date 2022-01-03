@@ -12,8 +12,6 @@ import './styles/vars.scss'
 // your custom styles here
 import './styles/main.css'
 
-import 'vue-loading-overlay/dist/vue-loading.css'
-
 // windicss utilities should be the last style import
 import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
