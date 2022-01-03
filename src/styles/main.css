@@ -37,7 +37,7 @@ html.dark {
     hover:shadow-md
     transition
     disabled:cursor-default disabled:bg-gray-500 disabled:opacity-50 disabled:bg-opacity-30 disabled:hover:shadow-transparent
-    active:outline-none
+    active:outline-none focus:outline-none
     ;
 }
 

@@ -7,15 +7,6 @@ export const useSearchStore = defineStore('search', () => {
   const usedKeywords = computed(() => Array.from(previousKeywords.value))
   const otherKeywords = computed(() => usedKeywords.value.filter(name => name !== savedKeyword.value))
 
-  const router = useRouter()
-
-  const go = (keyword: string | undefined) => {
-    if (keyword) {
-      setNewKeyword(keyword)
-      router.push(`/search?q=${encodeURIComponent(keyword)}`)
-    }
-  }
-
   const [isLoading, toggleLoading] = useToggle(false)
 
   /**
@@ -38,7 +29,6 @@ export const useSearchStore = defineStore('search', () => {
 
     isLoading,
 
-    go,
     toggleLoading,
   }
 })

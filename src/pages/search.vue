@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { search } from '~/api'
+import { useEnter } from '~/composables/search'
 import { useSearchStore } from '~/stores/search'
 
+const { enter } = useEnter()
 const route = useRoute()
 
 const searchStore = useSearchStore()
@@ -9,7 +11,7 @@ searchStore.setNewKeyword(route.query.q?.toString() || '')
 
 const keyword = ref(searchStore.savedKeyword)
 const slice = ref(route.query.slice?.toString())
-const pageNumber = ref(7)
+const pageNumber = ref(10)
 
 const searchData = ref()
 
@@ -48,6 +50,19 @@ const goToPage = (page: number) => {
 watch(() => searchStore.savedKeyword, () => {
   searchByParams()
 })
+
+const displayedPages = computed(() => {
+  if (searchData.value['总数']) {
+    const pages = Math.ceil(searchData.value['总数'] / pageNumber.value)
+    return pages <= 10 ? pages : 10
+  }
+  else { return 1 }
+})
+
+const searchKeyword = () => {
+  curPage.value = 1
+  enter(keyword.value)
+}
 </script>
 
 <template>
@@ -58,7 +73,10 @@ watch(() => searchStore.savedKeyword, () => {
         <i-ri-font-color text="2xl" />
       <!-- <img class="w-10 inline-flex" :src="logoUrl" title="Logo"> -->
       </a>
-      <InputBox v-model="keyword" class="inline-flex ml-6 shadow transition hover:shadow-md <sm:ml-4" :enter="()=>{searchStore.go(keyword)}" />
+      <InputBox v-model="keyword" class="inline-flex ml-6 shadow transition hover:shadow-md <sm:ml-4" :enter="()=>{searchKeyword()}" />
+      <button m="l-2" p="2" class="icon-btn flex justify-center items-center border rounded rounded-full !outline-none" @click="searchKeyword()">
+        <i-ri-heart-line />
+      </button>
     </div>
     <div v-if="searchData" m="l-24 <sm:l-0" p="2" class="max-w-2xl">
       <div text="left sm gray-500" m="b-2">
@@ -85,7 +103,7 @@ watch(() => searchStore.savedKeyword, () => {
       </div>
 
       <div m="t-6" class="pagination-container">
-        <span v-for="i in 10" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black dark:text-white' : 'text-blue-800 dark:text-blue-500 cursor-pointer hover:underline'" text="sm" @click="goToPage(i)">
+        <span v-for="i in displayedPages" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black dark:text-white' : 'text-blue-800 dark:text-blue-500 cursor-pointer hover:underline'" text="sm" @click="goToPage(i)">
           {{ i }}
         </span>
       </div>

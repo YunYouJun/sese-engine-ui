@@ -11,7 +11,7 @@ export async function search(params: Partial<SearchParams>) {
     slice?: string
   } = {
     q: params.q || '',
-    slice: params.slice || '0:7',
+    slice: params.slice || '0:10',
   }
   const data = await apiFetch('/search', {
     params: searchParams,

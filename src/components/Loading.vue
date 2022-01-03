@@ -1,18 +1,18 @@
 <template>
-  <div class="loading-container flex justify-center items-center absolute inset-0" h="screen" m="auto">
+  <div class="loading-container flex justify-center items-center fixed inset-0" h="screen" m="auto">
     <div class="spinner" />
   </div>
 </template>
 
 <style>
 .loading-container {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .spinner {
   width: 60px;
   height: 60px;
-  border: 1px solid white;
+  border: 1px solid black;
   margin: 100px auto;
   animation: rotateplane 1.2s infinite ease-in-out;
 }

@@ -9,6 +9,7 @@ declare module 'vue' {
     IRiAlertLine: typeof import('~icons/ri/alert-line')['default']
     IRiFontColor: typeof import('~icons/ri/font-color')['default']
     IRiGithubLine: typeof import('~icons/ri/github-line')['default']
+    IRiHeartLine: typeof import('~icons/ri/heart-line')['default']
     IRiMoonLine: typeof import('~icons/ri/moon-line')['default']
     IRiSearchLine: typeof import('~icons/ri/search-line')['default']
     IRiSunLine: typeof import('~icons/ri/sun-line')['default']
