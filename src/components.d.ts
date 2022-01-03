@@ -7,6 +7,8 @@ declare module 'vue' {
     Footer: typeof import('./components/Footer.vue')['default']
     InputBox: typeof import('./components/InputBox.vue')['default']
     IRiAlertLine: typeof import('~icons/ri/alert-line')['default']
+    IRiArrowLeftLine: typeof import('~icons/ri/arrow-left-line')['default']
+    IRiArrowRightLine: typeof import('~icons/ri/arrow-right-line')['default']
     IRiFontColor: typeof import('~icons/ri/font-color')['default']
     IRiGithubLine: typeof import('~icons/ri/github-line')['default']
     IRiHeartLine: typeof import('~icons/ri/heart-line')['default']

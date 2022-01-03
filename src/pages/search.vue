@@ -114,11 +114,23 @@ const highlightedText = (content: string) => {
         </div>
       </div>
 
-      <div m="t-6" class="pagination-container">
+      <div m="t-6 b-4" class="pagination-container flex justify-center items-center">
+        <span v-if="curPage > 1" class="page-link" text="sm" p="r-1" m="r-1" @click="goToPage(curPage - 1)">
+          <i-ri-arrow-left-line />
+        </span>
         <span v-for="i in displayedPages" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black dark:text-white' : 'text-blue-800 dark:text-blue-500 cursor-pointer hover:underline'" text="sm" @click="curPage === i ? null : goToPage(i)">
           {{ i }}
+        </span>
+        <span v-if="curPage < displayedPages" class="page-link" text="sm" p="l-1" m="l-1" @click="goToPage(curPage + 1)">
+          <i-ri-arrow-right-line />
         </span>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+.page-link {
+  @apply inline-flex justify-center items-center cursor-pointer hover:underline text-blue-600;
+}
+</style>
