@@ -65,7 +65,6 @@ const searchKeyword = () => {
   curPage.value = 1
   slice.value = `0:${pageNumber.value}`
   enter(keyword.value)
-  searchByParams()
 }
 
 /**
