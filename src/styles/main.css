@@ -6,6 +6,7 @@ body,
   transition: all 0.2s ease;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 html.dark {

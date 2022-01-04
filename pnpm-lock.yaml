@@ -41,6 +41,7 @@ specifiers:
   vue-demi: ^0.12.1
   vue-i18n: ^9.1.9
   vue-router: ^4.0.12
+  vue-toastification: ^2.0.0-rc.5
   vue-tsc: ^0.30.2
 
 dependencies:
@@ -54,6 +55,7 @@ dependencies:
   vue-demi: 0.12.1_vue@3.2.26
   vue-i18n: 9.1.9_vue@3.2.26
   vue-router: 4.0.12_vue@3.2.26
+  vue-toastification: 2.0.0-rc.5_vue@3.2.26
 
 devDependencies:
   '@antfu/eslint-config': 0.14.2_eslint@8.6.0+typescript@4.5.4
@@ -6591,6 +6593,14 @@ packages:
       vue: ^3.0.0
     dependencies:
       '@vue/devtools-api': 6.0.0-beta.21.1
+      vue: 3.2.26
+    dev: false
+
+  /vue-toastification/2.0.0-rc.5_vue@3.2.26:
+    resolution: {integrity: sha1-knmGBNgGrkc8+3btd2+uKUKA+Pg=, tarball: vue-toastification/download/vue-toastification-2.0.0-rc.5.tgz}
+    peerDependencies:
+      vue: ^3.0.2
+    dependencies:
       vue: 3.2.26
     dev: false
 

@@ -1,7 +1,10 @@
 :root {
-  --yun-bg-color: transparent;
+  --se-bg-color: transparent;
+  --se-divider-light: #999;
+  --se-divider-dark: #666;
 }
 
 html.dark {
-  --yun-bg-color: #121212;
+  --se-bg-color: #121212;
+  --se-divider-dark: #eee;
 }

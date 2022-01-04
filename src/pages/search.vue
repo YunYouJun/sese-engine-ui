@@ -52,12 +52,15 @@ watch(() => searchStore.savedKeyword, () => {
   searchByParams()
 })
 
+/**
+ * 显示的页数
+ */
 const displayedPages = computed(() => {
   if (searchData.value && searchData.value['总数']) {
     const pages = Math.ceil(searchData.value['总数'] / pageNumber.value)
     return pages <= 10 ? pages : 10
   }
-  else { return 1 }
+  else { return 0 }
 })
 
 const searchKeyword = () => {
@@ -116,7 +119,7 @@ const highlightedText = (content: string) => {
         </div>
       </div>
 
-      <div m="t-6 b-4" class="pagination-container flex justify-center items-center">
+      <div v-if="displayedPages" m="t-6 b-4" class="pagination-container flex justify-center items-center">
         <span v-if="curPage > 1" class="page-link" text="sm" p="r-1" m="r-1" @click="goToPage(curPage - 1)">
           <i-ri-arrow-left-line />
         </span>
