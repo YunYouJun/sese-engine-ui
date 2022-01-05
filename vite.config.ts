@@ -160,6 +160,7 @@ export default defineConfig({
       '@vueuse/core',
       '@vueuse/head',
       'ohmyfetch',
+      'vue-toastification',
     ],
     exclude: [
       'vue-demi',
