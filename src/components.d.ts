@@ -5,7 +5,6 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Footer: typeof import('./components/Footer.vue')['default']
-    ICarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     InputBox: typeof import('./components/InputBox.vue')['default']
     IRiAlertLine: typeof import('~icons/ri/alert-line')['default']
     IRiArrowLeftLine: typeof import('~icons/ri/arrow-left-line')['default']
