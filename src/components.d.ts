@@ -4,16 +4,19 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BannerLogo: typeof import('./components/BannerLogo.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
+    ICarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     InputBox: typeof import('./components/InputBox.vue')['default']
     IRiAlertLine: typeof import('~icons/ri/alert-line')['default']
     IRiArrowLeftLine: typeof import('~icons/ri/arrow-left-line')['default']
     IRiArrowRightLine: typeof import('~icons/ri/arrow-right-line')['default']
-    IRiFontColor: typeof import('~icons/ri/font-color')['default']
-    IRiGithubLine: typeof import('~icons/ri/github-line')['default']
     IRiHeartLine: typeof import('~icons/ri/heart-line')['default']
+    IRiInformationLine: typeof import('~icons/ri/information-line')['default']
     IRiMoonLine: typeof import('~icons/ri/moon-line')['default']
     IRiSearchLine: typeof import('~icons/ri/search-line')['default']
+    IRiSettings2Line: typeof import('~icons/ri/settings2-line')['default']
+    IRiSettingsLine: typeof import('~icons/ri/settings-line')['default']
     IRiSunLine: typeof import('~icons/ri/sun-line')['default']
     IRiTranslate: typeof import('~icons/ri/translate')['default']
     Loading: typeof import('./components/Loading.vue')['default']

@@ -2,10 +2,15 @@
 title: About
 ---
 
+<route lang="yaml">
+meta:
+  layout: page
+</route>
+
+<br />
+
 <div class="text-center">
-  <!-- You can use Vue components inside markdown -->
-  <i-carbon-dicom-overlay class="text-4xl -mb-6 m-auto" />
-  <h3>About</h3>
+  <h2 m="t-4">About</h2>
 </div>
 
 <ReadMe />
@@ -14,4 +19,5 @@ title: About
 import ReadMe from '~/../README.md'
 </script>
 
-- 后端：<https://github.com/RimoChan/sese-engine>
+<br />
+<br />
