@@ -77,8 +77,10 @@ const highlightedText = (content: string) => {
   let result = content
   const keywords = (searchData.value && searchData.value['分词']) || [keyword.value]
   keywords.forEach((item) => {
-    const re = new RegExp(item, 'g')
-    result = result.replace(re, `<em class="highlight">${item}</em>`)
+    const re = new RegExp(item, 'gi')
+    result = result.replace(re, (val: string) => {
+      return `<em class="highlight">${val}</em>`
+    })
   })
   return result
 }

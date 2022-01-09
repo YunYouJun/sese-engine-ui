@@ -13,3 +13,5 @@ title: About
 <script lang="ts" setup>
 import ReadMe from '~/../README.md'
 </script>
+
+- 后端：<https://github.com/RimoChan/sese-engine>
