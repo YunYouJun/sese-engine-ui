@@ -18,6 +18,11 @@ Se 是 Search 的缩写，所以就是色色引擎。开始搜索就是「**开�
 
 > 具体见 [RimoChan/sese-engine](https://github.com/RimoChan/sese-engine)
 
+### 相关链接
+
+- 前端：<https://github.com/YunYouJun/sese-engine-ui>
+- 后端：<https://github.com/RimoChan/sese-engine>
+
 ### 用处展望
 
 熟练地使用谷歌等搜索引擎已经可以帮助我们解决大部分问题。
@@ -67,7 +72,3 @@ More info see [.github/workflows/gh-pages.yml](./.github/workflows/gh-pages.yml)
 
 > 莉沫酱：**网站就是要不安全才好！
 
-## 链接
-
-- 前端：<https://github.com/YunYouJun/sese-engine-ui>
-- 后端：<https://github.com/RimoChan/sese-engine>
