@@ -57,7 +57,7 @@ pnpm build
 
 ### 第三方托管
 
-More info see [.github/workflows/gh-pages.yml](./.github/workflows/gh-pages.yml).
+More info see [.github/workflows/gh-pages.yml](https://github.com/YunYouJun/sese-engine-ui/blob/main/.github/workflows/gh-pages.yml).
 
 ## Todo
 
