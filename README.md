@@ -59,6 +59,12 @@ pnpm build
 
 More info see [.github/workflows/gh-pages.yml](https://github.com/YunYouJun/sese-engine-ui/blob/main/.github/workflows/gh-pages.yml).
 
+### [Google TagManager](https://tagmanager.google.com/)
+
+设置 `src/modules/gtm.ts` 中 `createGtm({ id: 'GTM-PFF9NPT' })` 的容器 ID。
+
+可通过代码添加[谷歌统计](https://analytics.google.com/)。
+
 ## Todo
 
 - Setting Page
