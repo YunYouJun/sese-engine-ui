@@ -11,17 +11,17 @@ defineEmits(['update:modelValue'])
 
 <template>
   <div
-    class="wrapper relative flex justify-center items-center"
+    class="sese-search-wrapper wrapper relative flex justify-center items-center"
     p="2"
     m="y-4"
-    border="~ rounded gray-200 dark:gray-700"
+    border="~ rounded gray-300 dark:gray-700"
     rounded="full"
   >
     <i-ri-search-line class="inline-flex ml-2" />
     <input
       id="input"
+      class="sese-input"
       :value="modelValue"
-      w="122 <sm:54"
       m="x-2"
       :aria-label="t('placeholder.search')"
       type="text"
@@ -33,3 +33,26 @@ defineEmits(['update:modelValue'])
     >
   </div>
 </template>
+
+<style lang="scss">
+.sese-search-wrapper {
+  transition: 0.4s;
+  &:hover {
+    --tw-shadow: 0 10px 30px -10px rgb(0 0 0/0.1),0 1px 2px -1px rgb(0 0 0/0.1);
+    -webkit-box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  }
+
+}
+
+.sese-input {
+  @apply w-122;
+}
+
+@media (max-width: 639.9px) {
+  .sese-input {
+    width: calc(100vw - 8rem);
+  }
+}
+
+</style>

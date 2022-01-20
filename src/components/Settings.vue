@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-5 right-5">
+  <div class="absolute top-5 right-5 inline-flex justify-center items-center">
     <!-- <a class="icon-btn mx-2" title="GitHub" href="https://github.com/YunYouJun/sese-engine-ui" target="_blank">
       <i-ri-github-line />
     </a> -->

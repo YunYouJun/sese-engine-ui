@@ -2,7 +2,6 @@
 import { useEnter } from '~/composables/search'
 import { useSearchStore } from '~/stores/search'
 
-import { isDark } from '~/composables'
 import { bannerUrl } from '~/config'
 
 const { enter } = useEnter()
@@ -14,13 +13,14 @@ const { t } = useI18n()
 
 <template>
   <div class="flex flex-col justify-center items-center" h="full">
-    <img class="w-80" :src="bannerUrl" alt="Rimo And XiaoYun">
+    <img class="w-70 filter drop-shadow" m="-b-4" :src="bannerUrl" alt="Rimo And XiaoYun">
 
     <InputBox v-model="keyword" :enter="()=>{enter(keyword)}" />
 
-    <div m="b-20">
+    <div m="b-18">
       <button
-        class="m-3 text-sm btn"
+        class="sese-btn m-3 text-sm btn "
+        bg="gradient-to-r"
         @click="enter(keyword)"
       >
         {{ t('button.search') }}

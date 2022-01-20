@@ -4,7 +4,6 @@ import type { SearchData } from '~/api/types'
 import { useEnter } from '~/composables/search'
 import { useSearchStore } from '~/stores/search'
 
-import { isDark } from '~/composables'
 import { bannerUrl } from '~/config'
 
 const { enter } = useEnter()
@@ -92,11 +91,11 @@ const highlightedText = (content: string) => {
 <template>
   <Loading v-show="searchStore.isLoading" />
   <div p="2">
-    <div p="l-2 <sm:l-0" class="flex justify-start items-center <sm:mt-8">
-      <a class="cursor-pointer inline-flex justify-center <sm:absolute top-4 left-4" @click="()=>{router.push('/')}">
-        <img class="w-16" :src="bannerUrl" alt="Rimo And XiaoYun">
+    <div p="l-2 <sm:l-0" class="flex justify-start items-center <sm:mt-6">
+      <a class="cursor-pointer inline-flex justify-center <sm:absolute top-3 left-5" m="r-3 b-1" @click="()=>{router.push('/')}">
+        <img class="w-16 filter drop-shadow" :src="bannerUrl" alt="Rimo And XiaoYun">
       </a>
-      <InputBox v-model="keyword" class="inline-flex ml-4 shadow transition hover:shadow-md <sm:ml-4" :enter="()=>{searchKeyword()}" />
+      <InputBox v-model="keyword" class="inline-flex" :enter="()=>{searchKeyword()}" />
       <button m="l-2" p="2" class="icon-btn flex justify-center items-center border rounded rounded-full !outline-none" @click="searchKeyword()">
         <i-ri-heart-line />
       </button>
