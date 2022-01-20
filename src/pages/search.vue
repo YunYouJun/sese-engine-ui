@@ -94,7 +94,7 @@ const highlightedText = (content: string) => {
   <div p="2">
     <div p="l-2 <sm:l-0" class="flex justify-start items-center <sm:mt-8">
       <a class="cursor-pointer inline-flex justify-center <sm:absolute top-4 left-4" @click="()=>{router.push('/')}">
-        <img class="w-16" :style="isDark ? 'filter:invert(100%)' : ''" :src="bannerUrl" alt="Rimo And XiaoYun">
+        <img class="w-16" :src="bannerUrl" alt="Rimo And XiaoYun">
       </a>
       <InputBox v-model="keyword" class="inline-flex ml-4 shadow transition hover:shadow-md <sm:ml-4" :enter="()=>{searchKeyword()}" />
       <button m="l-2" p="2" class="icon-btn flex justify-center items-center border rounded rounded-full !outline-none" @click="searchKeyword()">

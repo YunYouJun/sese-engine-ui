@@ -14,7 +14,7 @@ const { t } = useI18n()
 
 <template>
   <div class="flex flex-col justify-center items-center" h="full">
-    <img class="w-80" :style="isDark ? 'filter:invert(100%)' : ''" :src="bannerUrl" alt="Rimo And XiaoYun">
+    <img class="w-80" :src="bannerUrl" alt="Rimo And XiaoYun">
 
     <InputBox v-model="keyword" :enter="()=>{enter(keyword)}" />
 

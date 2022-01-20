@@ -5,6 +5,6 @@ import { bannerUrl } from '~/config'
 
 <template>
   <router-link to="/" title="Sese Engine">
-    <img class="w-16" :style="isDark ? 'filter:invert(100%)' : ''" :src="bannerUrl" alt="Rimo And XiaoYun">
+    <img class="w-16"  :src="bannerUrl" alt="Rimo And XiaoYun">
   </router-link>
 </template>
