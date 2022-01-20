@@ -1,5 +1,5 @@
 <p align='center'>
-  <img style="background: white;" src='./public/sese-banner-draft.png' alt='Sese Search Ui' />
+  <img style="background: white;" src='./public/sese-rimo-and-xiao-yun.png' alt='Sese Search Ui' />
 </p>
 
 <p align='center'>
