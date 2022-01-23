@@ -8,6 +8,6 @@ export const apiFetch = $fetch.create({
     const { useToast } = await import('vue-toastification')
     const toast = useToast()
     toast.error(`${response.status} ${response.statusText}`)
-    if (response.data) toast.error(response.data['信息'])
+    if (response._data) toast.error(response._data['信息'])
   },
 })
