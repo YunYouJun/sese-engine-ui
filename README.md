@@ -10,7 +10,7 @@
 
 > [色色引擎](https://github.com/RimoChan/sese-engine)的 UI
 
-Se 是 Search 的缩写，所以就是色色引擎。开始搜索就是「**开始色色**」。
+Se 是 Search 的缩写，所以就是色色引擎。开始搜索就是「**开始色色**」（同时也与See谐音，就是看看的意思）。
 
 ## What is Sese?
 
