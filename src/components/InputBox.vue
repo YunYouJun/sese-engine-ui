@@ -28,6 +28,7 @@ defineEmits(['update:modelValue'])
       autocomplete="false"
       bg="transparent"
       outline="none active:none"
+      autofocus
       @input="$emit('update:modelValue', ($event.target as any).value)"
       @keydown.enter="enter"
     >
