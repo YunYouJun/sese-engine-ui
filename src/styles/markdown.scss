@@ -3,10 +3,14 @@
 
 .prose {
   --prism-font-family: 'Input Mono', monospace;
-}
 
-.prose img {
-  width: 100%;
+  img {
+    width: 100%;
+  }
+
+  blockquote {
+    color: var(--sese-blockquote-color);
+  }
 }
 
 html:not(.dark) .prose {
