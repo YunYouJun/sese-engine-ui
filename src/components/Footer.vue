@@ -9,9 +9,10 @@ const { t } = useI18n()
         <i-ri-information-line />
       </router-link>
 
-      <router-link class="icon-btn mx-2" title="设置" to="/settings">
+      <!-- TODO!咕咕咕！ -->
+      <!-- <router-link class="icon-btn mx-2" title="设置" to="/settings">
         <i-ri-settings-2-line />
-      </router-link>
+      </router-link> -->
     </div>
   </div>
 </template>

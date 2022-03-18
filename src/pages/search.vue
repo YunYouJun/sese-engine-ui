@@ -6,6 +6,7 @@ import { useSearchStore } from '~/stores/search'
 
 import { bannerUrl } from '~/config'
 
+const { t } = useI18n()
 const { enter } = useEnter()
 const route = useRoute()
 
@@ -19,6 +20,10 @@ const pageNumber = ref(10)
 const searchData = ref<SearchData>()
 
 const router = useRouter()
+
+useHead({
+  title: `${keyword.value} - ${t('sese.title')}`,
+})
 
 const searchByParams = async() => {
   searchStore.isLoading = true
