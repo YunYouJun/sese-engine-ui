@@ -22,7 +22,7 @@ const searchData = ref<SearchData>()
 const router = useRouter()
 
 useHead({
-  title: `${keyword.value} - ${t('sese.title')}`,
+  title: computed(() => `${searchStore.savedKeyword} - ${t('sese.title')}`),
 })
 
 const searchByParams = async() => {

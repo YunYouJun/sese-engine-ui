@@ -14,7 +14,6 @@ declare module 'vue' {
     IRiInformationLine: typeof import('~icons/ri/information-line')['default']
     IRiMoonLine: typeof import('~icons/ri/moon-line')['default']
     IRiSearchLine: typeof import('~icons/ri/search-line')['default']
-    IRiSettings2Line: typeof import('~icons/ri/settings2-line')['default']
     IRiSunLine: typeof import('~icons/ri/sun-line')['default']
     IRiTranslate: typeof import('~icons/ri/translate')['default']
     Loading: typeof import('./components/Loading.vue')['default']
