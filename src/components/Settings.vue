@@ -14,9 +14,9 @@ const toggleLocales = () => {
 
 <template>
   <div class="absolute top-5 right-5 inline-flex justify-center items-center">
-    <a class="icon-btn mx-2" :title="t('button.toggle_langs')" @click="toggleLocales">
+    <button class="icon-btn mx-2" :title="t('button.toggle_langs')" @click="toggleLocales">
       <div i-ri-translate class="transform" :class="isEn ? 'rotate-y-180' : ''" />
-    </a>
+    </button>
 
     <button class="icon-btn mx-2 !outline-none" :title="t('button.toggle_dark')" @click="toggleDark()">
       <div v-if="isDark" i-ri-moon-line />

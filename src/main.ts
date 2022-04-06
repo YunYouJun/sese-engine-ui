@@ -9,7 +9,7 @@ import '@unocss/reset/tailwind.css'
 import './styles/vars.scss'
 // your custom styles here
 import './styles/main.scss'
-import './styles/scrollbar.css'
+import './styles/scrollbar.scss'
 
 import 'uno.css'
 
