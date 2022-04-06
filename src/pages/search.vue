@@ -102,7 +102,7 @@ const highlightedText = (content: string) => {
       </a>
       <InputBox v-model="keyword" class="inline-flex" :enter="()=>{searchKeyword()}" />
       <button m="l-2" p="2" class="icon-btn flex justify-center items-center border rounded rounded-full !outline-none" @click="searchKeyword()">
-        <i-ri-heart-line />
+        <div i-ri-heart-line />
       </button>
     </div>
     <div v-if="searchData" m="l-24 <sm:l-0" p="2" class="max-w-2xl">
@@ -121,7 +121,7 @@ const highlightedText = (content: string) => {
         </template>
         <div v-else>
           <div class="inline-flex justify-start items-center border" p="1" m="1">
-            <i-ri-alert-line />
+            <div i-ri-alert-line />
             <span m="l-1">我们的探测器对这个奇怪的网站没有效果！</span>
           </div>
         </div>
@@ -129,21 +129,15 @@ const highlightedText = (content: string) => {
 
       <div v-if="displayedPages" m="t-6 b-4" class="pagination-container flex justify-center items-center">
         <span v-if="curPage > 1" class="page-link" text="sm" p="r-1" m="r-1" @click="goToPage(curPage - 1)">
-          <i-ri-arrow-left-line />
+          <div i-ri-arrow-left-line />
         </span>
         <span v-for="i in displayedPages" :key="i" p="1" m="1" class="pagination-page" :class="curPage === i ? 'text-black dark:text-white' : 'text-blue-600 dark:text-blue-500 cursor-pointer hover:underline'" text="sm" @click="curPage === i ? null : goToPage(i)">
           {{ i }}
         </span>
         <span v-if="curPage < displayedPages" class="page-link" text="sm" p="l-1" m="l-1" @click="goToPage(curPage + 1)">
-          <i-ri-arrow-right-line />
+          <div i-ri-arrow-right-line />
         </span>
       </div>
     </div>
   </div>
 </template>
-
-<style>
-.page-link {
-  @apply inline-flex justify-center items-center cursor-pointer hover:underline text-blue-600;
-}
-</style>

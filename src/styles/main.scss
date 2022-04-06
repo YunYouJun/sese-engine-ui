@@ -19,7 +19,9 @@ html.dark {
 }
 
 #nprogress .bar {
-  @apply bg-blue-600 opacity-75;
+  background-color: rgb(37, 99, 235);
+
+  opacity: 0.75;
 
   position: fixed;
   z-index: 1031;
@@ -33,13 +35,6 @@ html.dark {
 .btn {
   height: 2rem;
   min-width: 6rem;
-
-  @apply px-4 rounded inline-flex justify-center items-center
-  text-white cursor-pointer bg-opacity-60
-    shadow hover:shadow-md transition duration-300
-    disabled:cursor-default disabled:bg-gray-500 disabled:opacity-50 disabled:bg-opacity-30 disabled:hover:shadow-transparent
-    active:outline-none focus:outline-none
-    ;
 }
 
 .sese-btn {
@@ -67,12 +62,6 @@ html.dark {
       opacity: 1;
     }
   }
-}
-
-.icon-btn {
-  @apply inline-flex justify-center items-center cursor-pointer select-none
-    opacity-75 transition duration-200 ease-in-out
-    hover:opacity-100 hover:text-blue-600;
 }
 
 .highlight {

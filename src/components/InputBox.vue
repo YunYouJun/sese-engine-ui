@@ -17,7 +17,7 @@ defineEmits(['update:modelValue'])
     border="~ rounded gray-300 dark:gray-700"
     rounded="full"
   >
-    <i-ri-search-line class="inline-flex ml-2" />
+    <div i-ri-search-line class="inline-flex ml-2" />
     <input
       id="input"
       class="sese-input"
@@ -47,7 +47,7 @@ defineEmits(['update:modelValue'])
 }
 
 .sese-input {
-  @apply w-122;
+  width: 30.5rem;
 }
 
 @media (max-width: 639.9px) {

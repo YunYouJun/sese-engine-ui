@@ -15,12 +15,12 @@ const toggleLocales = () => {
 <template>
   <div class="absolute top-5 right-5 inline-flex justify-center items-center">
     <a class="icon-btn mx-2" :title="t('button.toggle_langs')" @click="toggleLocales">
-      <i-ri-translate class="transform" :class="isEn ? 'rotate-y-180' : ''" />
+      <div i-ri-translate class="transform" :class="isEn ? 'rotate-y-180' : ''" />
     </a>
 
     <button class="icon-btn mx-2 !outline-none" :title="t('button.toggle_dark')" @click="toggleDark()">
-      <i-ri-moon-line v-if="isDark" />
-      <i-ri-sun-line v-else />
+      <div v-if="isDark" i-ri-moon-line />
+      <div v-else i-ri-sun-line />
     </button>
   </div>
 </template>
