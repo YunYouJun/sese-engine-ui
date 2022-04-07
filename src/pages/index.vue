@@ -15,7 +15,7 @@ const { t } = useI18n()
   <div class="flex flex-col justify-center items-center" h="full">
     <img width="280" height="156" class="w-70 filter drop-shadow" m="-b-4" :src="bannerUrl" alt="Rimo And XiaoYun">
 
-    <InputBox v-model="keyword" :enter="()=>{enter(keyword)}" />
+    <InputBox v-model="keyword" m="t-0 b-4" :enter="()=>{enter(keyword)}" />
 
     <div m="b-18">
       <button
