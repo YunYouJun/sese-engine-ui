@@ -98,8 +98,8 @@ const highlightedText = (content: string) => {
     <Transition>
       <Loading v-if="searchStore.isLoading" />
     </Transition>
-    <div p="l-2 lt-sm:l-0" class="flex justify-start items-center lt-sm:mt-6">
-      <a class="cursor-pointer inline-flex justify-center lt-sm:absolute top-3 left-5" m="r-3 b-1" @click="()=>{router.push('/')}">
+    <div p="l-2 lt-sm:l-0" class="relative flex justify-start items-center lt-sm:mt-6">
+      <a class="cursor-pointer inline-flex justify-center lt-sm:absolute -top-5 left-5" m="r-3 b-1" @click="()=>{router.push('/')}">
         <img class="w-16 filter drop-shadow" :src="bannerUrl" alt="Rimo And XiaoYun">
       </a>
       <InputBox v-model="keyword" class="inline-flex" :enter="()=>{searchKeyword()}" />
