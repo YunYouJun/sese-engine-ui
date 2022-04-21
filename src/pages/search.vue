@@ -98,8 +98,8 @@ const highlightedText = (content: string) => {
     <Transition>
       <Loading v-if="searchStore.isLoading" />
     </Transition>
-    <div p="l-2 <sm:l-0" class="flex justify-start items-center <sm:mt-6">
-      <a class="cursor-pointer inline-flex justify-center <sm:absolute top-3 left-5" m="r-3 b-1" @click="()=>{router.push('/')}">
+    <div p="l-2 lt-sm:l-0" class="flex justify-start items-center lt-sm:mt-6">
+      <a class="cursor-pointer inline-flex justify-center lt-sm:absolute top-3 left-5" m="r-3 b-1" @click="()=>{router.push('/')}">
         <img class="w-16 filter drop-shadow" :src="bannerUrl" alt="Rimo And XiaoYun">
       </a>
       <InputBox v-model="keyword" class="inline-flex" :enter="()=>{searchKeyword()}" />
@@ -107,7 +107,7 @@ const highlightedText = (content: string) => {
         <div i-ri-heart-line />
       </button>
     </div>
-    <div v-if="searchData" m="l-24 <sm:l-0" p="2" class="max-w-2xl">
+    <div v-if="searchData" m="l-24 lt-sm:l-0" p="2" class="max-w-2xl">
       <div text="left sm gray-500" m="b-2">
         找到约 {{ searchData['总数'] }} 个结果
       </div>
