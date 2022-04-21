@@ -92,9 +92,10 @@ More info see [.github/workflows/gh-pages.yml](https://github.com/YunYouJun/sese
 
 ## FAQ
 
-### 为什么不是 HTTPS ？
+### 为什么~~不~~是 HTTPS ？
 
 因为莉沫酱太懒了！
 
-> 莉沫酱：**网站就是要不安全才好！
+> 莉沫酱：~~**网站就是要不安全才好！~~
 
+最后，莉沫酱屈服在了我的淫威之下，还是加上了 HTTPS。
