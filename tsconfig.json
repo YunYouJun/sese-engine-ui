@@ -18,6 +18,7 @@
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client"
     ],
+    "jsx": "preserve",
     "paths": {
       "~/*": ["src/*"]
     }

@@ -13,7 +13,7 @@ const toggleLocales = () => {
 </script>
 
 <template>
-  <div class="absolute top-5 right-5 inline-flex justify-center items-center">
+  <div class="absolute z-1 top-5 right-5 inline-flex justify-center items-center">
     <button class="icon-btn mx-2" :title="t('button.toggle_langs')" @click="toggleLocales">
       <div i-ri-translate class="transform" :class="isEn ? 'rotate-y-180' : ''" />
     </button>
