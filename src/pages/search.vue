@@ -81,7 +81,8 @@ const searchKeyword = () => {
  * 高亮文本
  */
 const highlightedText = (content: string) => {
-  let result = content
+  // to solve xss
+  let result = content.replace(/</g, '&lt;').replace(/>/g, '&gt;')
   const keywords = (searchData.value && searchData.value['分词']) || [keyword.value]
   keywords.forEach((item) => {
     const re = new RegExp(item, 'gi')
