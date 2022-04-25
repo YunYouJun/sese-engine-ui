@@ -55,7 +55,6 @@ dependencies:
   vue-demi: 0.12.5_vue@3.2.33
   vue-i18n: 9.1.9_vue@3.2.33
   vue-router: 4.0.14_vue@3.2.33
-  vue-toastification: 2.0.0-rc.5_vue@3.2.33
 
 devDependencies:
   '@antfu/eslint-config': 0.20.7_eslint@8.14.0+typescript@4.6.3
@@ -86,6 +85,7 @@ devDependencies:
   vite-plugin-vue-layouts: 0.6.0_c6669f7f6a2bb1e4cd0ce207bade55c6
   vite-ssg: 0.19.2_eacfe4bd4e3401e3e0916bc5279e5ce7
   vitest: 0.9.4_sass@1.50.1
+  vue-toastification: 2.0.0-rc.5_vue@3.2.33
   vue-tsc: 0.34.10_typescript@4.6.3
 
 packages:
@@ -6692,12 +6692,12 @@ packages:
     dev: false
 
   /vue-toastification/2.0.0-rc.5_vue@3.2.33:
-    resolution: {integrity: sha1-knmGBNgGrkc8+3btd2+uKUKA+Pg=, tarball: vue-toastification/download/vue-toastification-2.0.0-rc.5.tgz}
+    resolution: {integrity: sha512-q73e5jy6gucEO/U+P48hqX+/qyXDozAGmaGgLFm5tXX4wJBcVsnGp4e/iJqlm9xzHETYOilUuwOUje2Qg1JdwA==}
     peerDependencies:
       vue: ^3.0.2
     dependencies:
       vue: 3.2.33
-    dev: false
+    dev: true
 
   /vue-tsc/0.34.10_typescript@4.6.3:
     resolution: {integrity: sha512-rWU4SjDqk9ylQN2hbnyP+rEu8W2a712DWUmciX6rDnId1m8sN/cuypTKjWjHHjaBLWNKULoEakRTOvrQ4ainhw==}

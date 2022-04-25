@@ -21,8 +21,7 @@
     "vue": "^3.2.33",
     "vue-demi": "^0.12.5",
     "vue-i18n": "^9.1.9",
-    "vue-router": "^4.0.14",
-    "vue-toastification": "^2.0.0-rc.5"
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.20.7",
@@ -53,6 +52,7 @@
     "vite-plugin-vue-layouts": "^0.6.0",
     "vite-ssg": "^0.19.2",
     "vitest": "^0.9.4",
+    "vue-toastification": "^2.0.0-rc.5",
     "vue-tsc": "^0.34.10"
   }
 }
