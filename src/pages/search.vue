@@ -112,22 +112,39 @@ const highlightedText = (content: string) => {
       <div text="left sm gray-500" m="b-2">
         找到约 {{ searchData['总数'] }} 个结果
       </div>
-      <div v-for="(item, i) in searchData['结果']" :key="i" text="left" m="b-4">
-        <a :href="item['网址']" target="_blank" class="block truncate"><cite class="not-italic" text="xs">{{ item['网址'] }}</cite></a>
-        <template v-if="item['信息']">
-          <a :href="item['网址']" target="_blank" class="text-lg text-blue-900 hover:underline dark:text-blue-500">
-            <h3 class="top-0 truncate">
-              {{ item['信息']['标题'] }}
-            </h3>
-          </a>
-          <p text="sm" v-html="highlightedText(item['信息']['描述'] || item['信息']['文本'])" />
-        </template>
-        <div v-else>
-          <div class="inline-flex justify-start items-center border" p="1" m="1">
-            <div i-ri-alert-line />
-            <span m="l-1">我们的探测器对这个奇怪的网站没有效果！</span>
+      <template v-if="searchData['总数']">
+        <div v-for="(item, i) in searchData['结果']" :key="i" text="left" m="b-4">
+          <a :href="item['网址']" target="_blank" class="block truncate"><cite class="not-italic" text="xs">{{ item['网址'] }}</cite></a>
+          <template v-if="item['信息']">
+            <a :href="item['网址']" target="_blank" class="text-lg text-blue-900 hover:underline dark:text-blue-500">
+              <h3 class="top-0 truncate">
+                {{ item['信息']['标题'] }}
+              </h3>
+            </a>
+            <p text="sm" v-html="highlightedText(item['信息']['描述'] || item['信息']['文本'])" />
+          </template>
+          <div v-else>
+            <div class="inline-flex justify-start items-center border" p="1" m="1">
+              <div i-ri-alert-line />
+              <span m="l-1">我们的探测器对这个奇怪的网站没有效果！</span>
+            </div>
           </div>
         </div>
+      </template>
+
+      <div v-else text="left" m="t-8">
+        找不到和您查询的「<strong text="red-500">{{ keyword }}</strong>」相符的内容或信息！
+
+        <p m="t-8" text="left">
+          建议：
+          <ul p="4">
+            <li class="list-circle">
+              使用 Google 搜索
+            </li>
+          </ul>
+
+          <img src="/rimo-touch-fish.png" alt="摸鱼">
+        </p>
       </div>
 
       <div v-if="displayedPages" m="t-6 b-4" class="pagination-container flex justify-center items-center">
@@ -141,6 +158,9 @@ const highlightedText = (content: string) => {
           <div i-ri-arrow-right-line />
         </span>
       </div>
+    </div>
+    <div v-else m="t-10">
+      服务器不……不行了……
     </div>
   </div>
 </template>
