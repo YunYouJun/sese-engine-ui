@@ -1,0 +1,1 @@
+import{_ as n,c as r,g as e,o as c,G as s,E as a}from"./app.c68c75ab.js";const _={},m={w:"screen",h:"screen",class:"px-4 py-10 text-center text-gray-700 dark:text-gray-200"};function i(p,f){const t=s,o=a("router-view");return c(),r("main",m,[e(t),e(o)])}var d=n(_,[["render",i]]);export{d as default};
