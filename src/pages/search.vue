@@ -159,7 +159,7 @@ const highlightedText = (content: string) => {
         </span>
       </div>
     </div>
-    <div v-else m="t-10">
+    <div v-else-if="!searchStore.isLoading" m="t-10">
       服务器不……不行了……
     </div>
   </div>
