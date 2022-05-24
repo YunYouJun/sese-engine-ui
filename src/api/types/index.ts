@@ -7,6 +7,7 @@ export interface SearchResult {
     文本: string
     文本长度: number
   }
+  原因: Record<string, number>
 }
 
 export interface SearchData {

@@ -4,16 +4,14 @@
 html,
 body,
 #app {
+  color: var(--se-c-text);
+  background-color: var(--se-c-bg);
+
   transition: all 0.2s ease;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
-
-html.dark {
-  background: #121212;
-}
-
 
 #nprogress {
   pointer-events: none;

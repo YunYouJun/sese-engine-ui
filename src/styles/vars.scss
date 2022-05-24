@@ -1,10 +1,18 @@
 :root {
-  --se-bg-color: transparent;
+  --se-c-text: #374151;
+  --se-c-text-light: rgba(60, 60, 60, .6);
+
+  --se-c-bg: transparent;
+
   --se-divider-light: #999;
   --se-divider-dark: #666;
 }
 
 html.dark {
-  --se-bg-color: #121212;
+  --se-c-text: #e5e7eb;
+  --se-c-text-light: rgba(235, 235, 235, .6);
+
+  --se-c-bg: #121212;
+
   --se-divider-dark: #eee;
 }

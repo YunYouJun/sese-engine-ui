@@ -18,6 +18,7 @@ const slice = ref(route.query.slice?.toString())
 const pageNumber = ref(10)
 
 const searchData = ref<SearchData>()
+const keywords = computed(() => (searchData.value && searchData.value['分词']) || [keyword.value])
 
 const router = useRouter()
 
@@ -76,22 +77,6 @@ const searchKeyword = () => {
   slice.value = `0:${pageNumber.value}`
   enter(keyword.value)
 }
-
-/**
- * 高亮文本
- */
-const highlightedText = (content: string) => {
-  // to solve xss
-  let result = content.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-  const keywords = (searchData.value && searchData.value['分词']) || [keyword.value]
-  keywords.forEach((item) => {
-    const re = new RegExp(item, 'gi')
-    result = result.replace(re, (val: string) => {
-      return `<em class="highlight">${val}</em>`
-    })
-  })
-  return result
-}
 </script>
 
 <template>
@@ -113,23 +98,7 @@ const highlightedText = (content: string) => {
         找到约 {{ searchData['总数'] }} 个结果
       </div>
       <template v-if="searchData['总数']">
-        <div v-for="(item, i) in searchData['结果']" :key="i" text="left" m="b-4">
-          <a :href="item['网址']" target="_blank" class="block truncate"><cite class="not-italic" text="xs">{{ item['网址'] }}</cite></a>
-          <template v-if="item['信息']">
-            <a :href="item['网址']" target="_blank" class="text-lg text-blue-900 hover:underline dark:text-blue-500">
-              <h3 class="top-0 truncate">
-                {{ item['信息']['标题'] }}
-              </h3>
-            </a>
-            <p text="sm" v-html="highlightedText(item['信息']['描述'] || item['信息']['文本'])" />
-          </template>
-          <div v-else>
-            <div class="inline-flex justify-start items-center border" p="1" m="1">
-              <div i-ri-alert-line />
-              <span m="l-1">我们的探测器对这个奇怪的网站没有效果！</span>
-            </div>
-          </div>
-        </div>
+        <ResultItem v-for="(item, i) in searchData['结果']" :key="i" :keywords="keywords" se :result="item" />
       </template>
 
       <div v-else text="left" m="t-8">
