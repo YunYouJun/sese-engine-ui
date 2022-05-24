@@ -43,13 +43,7 @@ jobs:
         run: pnpm run typecheck
 
   test:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x]
-        os: [ubuntu-latest]
-      fail-fast: false
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
