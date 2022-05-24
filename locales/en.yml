@@ -6,7 +6,7 @@ button:
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
   search: Se Search
-  
+
 intro:
   desc: Opinionated Vite Starter Template
   dynamic-route: Demo of dynamic route

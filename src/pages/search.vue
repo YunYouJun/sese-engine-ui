@@ -25,7 +25,7 @@ useHead({
   title: computed(() => `${searchStore.savedKeyword} - ${t('sese.title')}`),
 })
 
-const searchByParams = async() => {
+const searchByParams = async () => {
   searchStore.isLoading = true
   const data = await search({
     q: keyword.value,
@@ -35,7 +35,7 @@ const searchByParams = async() => {
   searchData.value = data
 }
 
-onBeforeMount(async() => {
+onBeforeMount(async () => {
   searchByParams()
 })
 
@@ -100,10 +100,10 @@ const highlightedText = (content: string) => {
       <Loading v-if="searchStore.isLoading" />
     </Transition>
     <div p="l-2 lt-sm:l-0" class="relative flex justify-start items-center lt-sm:mt-6">
-      <a class="cursor-pointer inline-flex justify-center lt-sm:absolute -top-5 left-5" m="r-3 b-1" @click="()=>{router.push('/')}">
+      <a class="cursor-pointer inline-flex justify-center lt-sm:absolute -top-5 left-5" m="r-3 b-1" @click="() => { router.push('/') }">
         <img class="w-16 filter drop-shadow" :src="bannerUrl" alt="Rimo And XiaoYun">
       </a>
-      <InputBox v-model="keyword" class="inline-flex" :enter="()=>{searchKeyword()}" />
+      <InputBox v-model="keyword" class="inline-flex" :enter="() => { searchKeyword() }" />
       <button m="l-2" p="2" class="icon-btn flex justify-center items-center border rounded rounded-full !outline-none" @click="searchKeyword()">
         <div i-ri-heart-line />
       </button>

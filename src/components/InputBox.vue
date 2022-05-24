@@ -1,12 +1,10 @@
 <script lang="ts" setup>
-const { t } = useI18n()
-
 defineProps<{
   modelValue: string
   enter: (e: KeyboardEvent) => void
 }>()
-
 defineEmits(['update:modelValue'])
+const { t } = useI18n()
 </script>
 
 <template>
@@ -55,5 +53,4 @@ defineEmits(['update:modelValue'])
     width: calc(100vw - 8rem);
   }
 }
-
 </style>
