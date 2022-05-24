@@ -1,12 +1,10 @@
 <script lang="ts" setup>
 import type { SearchResult } from '~/api/types'
 
-const props = defineProps<{
+defineProps<{
   keywords: string[]
   result: SearchResult
 }>()
-
-console.log(props.result)
 
 /**
  * 高亮文本

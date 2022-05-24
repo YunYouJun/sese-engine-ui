@@ -1,8 +1,10 @@
 name: GitHub Pages
+
 on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ${{ matrix.os }}
