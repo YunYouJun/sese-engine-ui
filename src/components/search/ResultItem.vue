@@ -20,12 +20,10 @@ const highlightedText = (content: string, keywords: string[]) => {
   })
   return result
 }
-
-const showInfo = ref(false)
 </script>
 
 <template>
-  <div class="result-item relative" flex="~ col" text="left" m="b-4" @mouseover="showInfo = true" @mouseout="showInfo = false">
+  <div class="result-item relative" flex="~ col" text="left" m="b-4">
     <a :href="result['网址']" target="_blank" class="block truncate">
       <cite class="not-italic" text="xs">{{ result['网址'] }}</cite>
     </a>
@@ -48,7 +46,7 @@ const showInfo = ref(false)
     </div>
 
     <Transition>
-      <div v-if="showInfo" class="absolute top-0 -right-60 min-h-full justify-center" flex="~ col">
+      <div class="reason-container absolute top-0 -right-60 min-h-full justify-center hidden opacity-0 transition" flex="~ col">
         <blockquote class="search-reason" p="l-2" text="xs">
           <span v-for="value, key in result['原因']" :key="key" class="block">
             {{ key }}：{{ value.toFixed(3) }}
@@ -60,6 +58,14 @@ const showInfo = ref(false)
 </template>
 
 <style lang="scss">
+.result-item {
+  &:hover {
+    .reason-container {
+      opacity: 1;
+    }
+  }
+}
+
 .search-reason {
   color: var(--se-c-text-light);
   border-left: 4px solid var(--se-c-text-light);
