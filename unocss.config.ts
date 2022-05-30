@@ -2,7 +2,6 @@ import {
   defineConfig,
   presetAttributify,
   presetIcons,
-  presetTypography,
   presetUno,
   transformerDirectives,
   transformerVariantGroup,
@@ -21,7 +20,6 @@ export default defineConfig({
       scale: 1.2,
       warn: true,
     }),
-    presetTypography(),
   ],
   transformers: [
     transformerDirectives(),
