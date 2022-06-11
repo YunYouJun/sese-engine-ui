@@ -23,7 +23,7 @@ const highlightedText = (content: string, keywords: string[]) => {
 </script>
 
 <template>
-  <div class="result-item relative" flex="~ col" text="left" m="b-4">
+  <div class="result-item relative overflow-visible" flex="~ col" text="left" m="b-4">
     <a :href="result['网址']" target="_blank" class="block truncate">
       <cite class="not-italic" text="xs">{{ result['网址'] }}</cite>
     </a>
@@ -46,7 +46,12 @@ const highlightedText = (content: string, keywords: string[]) => {
     </div>
 
     <Transition>
-      <div class="reason-container absolute top-0 -right-60 min-h-full justify-center hidden opacity-0 transition" flex="~ col">
+      <div
+        class="reason-container absolute top-0 left-180 min-h-full justify-center hidden transition"
+        w="64"
+        opacity="0"
+        flex="~ col"
+      >
         <blockquote class="search-reason" p="l-2" text="xs">
           <span v-for="value, key in result['原因']" :key="key" class="block">
             {{ key }}：{{ value.toFixed(3) }}
