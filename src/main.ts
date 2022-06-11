@@ -8,6 +8,7 @@ import '@unocss/reset/tailwind.css'
 
 import './styles/vars.scss'
 // your custom styles here
+import 'star-markdown-css/src/scss/theme/yun.scss'
 import './styles/main.scss'
 import './styles/scrollbar.scss'
 

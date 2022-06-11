@@ -25,5 +25,5 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
-  safelist: 'prose prose-sm m-auto text-left'.split(' '),
+  safelist: 'max-w-800px prose prose-sm m-auto text-left'.split(' '),
 })
