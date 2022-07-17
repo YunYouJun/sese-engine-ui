@@ -36,11 +36,11 @@ const domainUrl = computed(() =>
 
 <template>
   <div class="result-item relative overflow-visible" flex="~ col" text="left" m="b-4">
-    <span class="flex justify-between">
+    <span class="flex justify-between items-center">
       <a :href="result['网址']" target="_blank" class="block truncate">
         <cite class="not-italic" text="xs">{{ result['网址'] }}</cite>
       </a>
-      <a :href="domainUrl" class="cursor-pointer related-info sese-link text-xs">
+      <a :href="domainUrl" class="cursor-pointer related-info sese-link text-xs transition">
         在 {{ domain }}  中找到 {{ result['相同域名个数'] }} 个相关页面
       </a>
     </span>
