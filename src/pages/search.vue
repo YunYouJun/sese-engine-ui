@@ -9,6 +9,7 @@ import { bannerUrl } from '~/config'
 const { t } = useI18n()
 const { enter } = useEnter()
 const route = useRoute()
+const router = useRouter()
 
 const searchStore = useSearchStore()
 searchStore.setNewKeyword(route.query.q?.toString() || '')
@@ -19,8 +20,6 @@ const pageNumber = ref(10)
 
 const searchData = ref<SearchData>()
 const keywords = computed(() => (searchData.value && searchData.value['分词']) || [keyword.value])
-
-const router = useRouter()
 
 useHead({
   title: computed(() => `${searchStore.savedKeyword} - ${t('sese.title')}`),
@@ -104,11 +103,17 @@ const searchKeyword = () => {
       <div v-else text="left" m="t-8">
         找不到和您查询的「<strong text="red-500">{{ keyword }}</strong>」相符的内容或信息！
 
+        <p class="cursor-pointer hover:underline" text="sm" m="t-4" @click="router.go(-1)">
+          返回上一页
+        </p>
+
         <p m="t-8" text="left">
           建议：
           <ul p="4">
             <li class="list-circle">
-              使用 Google 搜索
+              <a class="hover:underline" :href="`https://www.google.com/search?q=${keyword}`" target="_blank" :title="keyword">
+                使用 Google 搜索
+              </a>
             </li>
           </ul>
 

@@ -1,10 +1,12 @@
 <script lang="ts" setup>
 import type { SearchResult } from '~/api/types'
 
-defineProps<{
+const props = defineProps<{
   keywords: string[]
   result: SearchResult
 }>()
+
+const query = useRoute().query.q
 
 /**
  * 高亮文本
@@ -20,13 +22,28 @@ const highlightedText = (content: string, keywords: string[]) => {
   })
   return result
 }
+
+const domain = computed(() => {
+  const url = new URL(props.result['网址'])
+  return url.hostname
+})
+
+const siteString = computed(() => `site:${domain.value}`)
+const domainUrl = computed(() =>
+  `/search?q=${siteString.value} ${query?.toString().replace(siteString.value, '').trim()}`,
+)
 </script>
 
 <template>
   <div class="result-item relative overflow-visible" flex="~ col" text="left" m="b-4">
-    <a :href="result['网址']" target="_blank" class="block truncate">
-      <cite class="not-italic" text="xs">{{ result['网址'] }}</cite>
-    </a>
+    <span class="flex justify-between">
+      <a :href="result['网址']" target="_blank" class="block truncate">
+        <cite class="not-italic" text="xs">{{ result['网址'] }}</cite>
+      </a>
+      <a :href="domainUrl" class="cursor-pointer related-info sese-link text-xs">
+        在 {{ domain }}  中找到 {{ result['相同域名个数'] }} 个相关页面
+      </a>
+    </span>
     <template v-if="result['信息']">
       <a
         :href="result['网址']" target="_blank"
@@ -64,7 +81,14 @@ const highlightedText = (content: string, keywords: string[]) => {
 
 <style lang="scss">
 .result-item {
+  .related-info {
+    opacity: 0;
+  }
+
   &:hover {
+    .related-info {
+      opacity: 1;
+    }
     .reason-container {
       opacity: 1;
     }

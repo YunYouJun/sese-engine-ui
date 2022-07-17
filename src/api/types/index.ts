@@ -8,6 +8,7 @@ export interface SearchResult {
     文本长度: number
   }
   原因: Record<string, number>
+  相同域名个数: number
 }
 
 export interface SearchData {

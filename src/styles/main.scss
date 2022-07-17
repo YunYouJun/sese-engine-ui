@@ -63,6 +63,10 @@ body,
   }
 }
 
+.sese-link {
+  @apply text-blue-900 dark:text-blue-500;
+}
+
 .highlight {
   font-style: normal;
   color: red;
