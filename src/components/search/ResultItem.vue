@@ -6,7 +6,14 @@ const props = defineProps<{
   result: SearchResult
 }>()
 
-const query = useRoute().query.q
+const route = useRoute()
+const query = computed(() => {
+  const q = route.query.q?.toString()
+  if (q?.startsWith('site:'))
+    return q.split(' ').slice(1).join(' ')
+  else
+    return q
+})
 
 /**
  * 高亮文本
@@ -30,7 +37,7 @@ const domain = computed(() => {
 
 const siteString = computed(() => `site:${domain.value}`)
 const domainUrl = computed(() =>
-  `/search?q=${siteString.value} ${query?.toString().replace(siteString.value, '').trim()}`,
+  `/search?q=${siteString.value} ${query.value?.trim()}`,
 )
 </script>
 
