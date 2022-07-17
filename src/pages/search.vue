@@ -12,9 +12,14 @@ const route = useRoute()
 const router = useRouter()
 
 const searchStore = useSearchStore()
-searchStore.setNewKeyword(route.query.q?.toString() || '')
+const query = computed(() => route.query.q?.toString() || '')
 
-const keyword = ref(searchStore.savedKeyword)
+const keyword = ref(query.value)
+watch(() => query.value, () => {
+  searchStore.setNewKeyword(query.value)
+  keyword.value = query.value
+})
+
 const slice = ref(route.query.slice?.toString())
 const pageNumber = ref(10)
 
