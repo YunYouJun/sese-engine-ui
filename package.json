@@ -4,7 +4,7 @@
   "packageManager": "pnpm@7.1.7",
   "scripts": {
     "build": "cross-env NODE_ENV=production vite-ssg build",
-    "dev": "vite --port 3333 --open",
+    "dev": "vite --port 3333 --open --host",
     "lint": "eslint .",
     "test": "vitest",
     "test:unit": "vitest",

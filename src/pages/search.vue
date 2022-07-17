@@ -27,7 +27,7 @@ const searchData = ref<SearchData>()
 const keywords = computed(() => (searchData.value && searchData.value['分词']) || [keyword.value])
 
 useHead({
-  title: computed(() => `${searchStore.savedKeyword} - ${t('sese.title')}`),
+  title: computed(() => `${query.value} - ${t('sese.title')}`),
 })
 
 const searchByParams = async () => {
