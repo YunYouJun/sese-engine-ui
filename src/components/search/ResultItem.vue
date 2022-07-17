@@ -82,7 +82,7 @@ const domainUrl = computed(() =>
 <style lang="scss">
 .result-item {
   .related-info {
-    opacity: 1;
+    opacity: 0;
   }
 
   &:hover {
