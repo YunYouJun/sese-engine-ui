@@ -5,8 +5,8 @@ import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Markdown from 'vite-plugin-md'
-import { vueI18n } from '@intlify/vite-plugin-vue-i18n'
+import Markdown from 'vite-plugin-vue-markdown'
+import { vueI18n as VueI18n } from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
@@ -61,8 +61,6 @@ export default defineConfig({
     // see unocss.config.ts for config
     Unocss(),
 
-    // https://github.com/antfu/vite-plugin-md
-    // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
       wrapperClasses: markdownWrapperClasses,
       headEnabled: true,
@@ -82,7 +80,7 @@ export default defineConfig({
     // remove pwa
 
     // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
-    vueI18n({
+    VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
       include: [path.resolve(__dirname, 'locales/**')],
@@ -109,13 +107,8 @@ export default defineConfig({
 
   optimizeDeps: {
     include: [
-      'vue',
-      'vue-router',
-      '@vueuse/core',
-      '@vueuse/head',
       'ohmyfetch',
       'vue-toastification',
-      'vue-i18n',
     ],
     exclude: [
       'vue-demi',
@@ -129,5 +122,10 @@ export default defineConfig({
     deps: {
       inline: ['@vue', '@vueuse', 'vue-demi'],
     },
+  },
+
+  ssr: {
+    // TODO: workaround until they support native ESM
+    noExternal: ['workbox-window', /vue-i18n/],
   },
 })

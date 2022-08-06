@@ -5,7 +5,7 @@ button:
   home: 首页
   toggle_dark: 切换深色模式
   toggle_langs: 切换语言
-  search: 开始色色
+  search: Sese 搜索
 
 intro:
   desc: 固执己见的 Vite 项目模板
@@ -19,6 +19,6 @@ placeholder:
   search: 搜索
 
 sese:
-  title: 色色引擎
+  title: Sese 搜索
 
 copyright: 版权
