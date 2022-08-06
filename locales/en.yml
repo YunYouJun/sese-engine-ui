@@ -5,7 +5,7 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
-  search: Se Search
+  search: Sese Search
 
 intro:
   desc: Opinionated Vite Starter Template
@@ -19,4 +19,4 @@ placeholder:
   search: Search
 
 sese:
-  title: Sese Engine
+  title: Sese Search
