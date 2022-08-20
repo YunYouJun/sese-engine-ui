@@ -47,7 +47,7 @@ const domainUrl = computed(() =>
       <a :href="result['网址']" target="_blank" class="truncate">
         <cite class="not-italic" text="xs">{{ result['网址'] }}</cite>
       </a>
-      <a :href="domainUrl" class="cursor-pointer related-info sese-link transition">
+      <a :href="domainUrl" class="cursor-pointer related-info sese-link transition truncate">
         <cite text="xs">在 {{ domain }}  中找到 {{ result['相同域名个数'] }} 个相关页面</cite>
       </a>
     </span>
