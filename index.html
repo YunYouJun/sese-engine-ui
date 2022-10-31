@@ -14,12 +14,6 @@
       if (setting === 'dark' || (prefersDark && setting !== 'light'))
         document.documentElement.classList.toggle('dark', true)
     })()
-
-    // remove pwa
-    navigator.serviceWorker.getRegistrations().then((registrations) => {
-      for (const registration of registrations)
-        registration.unregister()
-})
   </script>
 </head>
 <body>
