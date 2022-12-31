@@ -10,7 +10,7 @@ const { t } = useI18n()
       <a href="http://sese.yyj.moe" target="_blank">
         <img width="28" height="16" class="filter grayscale" m="x-2" style="margin-top: -2px" :src="bannerUrl" alt="Rimo And XiaoYun">
       </a>
-      ©️ 2022
+      ©️ 2022-{{ new Date().getFullYear() }}
       <a class="mx-1" href="https://github.com/RimoChan" target="_blank">RimoChan</a>
       <span>❤️</span>
       <a class="mx-1" href="https://github.com/YunYouJun" target="_blank">YunYouJun</a>
