@@ -93,8 +93,13 @@ const searchKeyword = () => {
         <img class="w-16 filter drop-shadow" :src="bannerUrl" alt="Rimo And XiaoYun">
       </a>
       <InputBox v-model="keyword" class="inline-flex" :enter="() => { searchKeyword() }" />
-      <button m="l-2" p="2" class="icon-btn flex justify-center items-center border rounded rounded-full !outline-none" @click="searchKeyword()">
-        <div i-ri-heart-line />
+      <button
+        m="l-2" p="2" class="search-btn icon-btn flex justify-center items-center border rounded rounded-full !outline-none"
+        hover="border-red"
+        @click="searchKeyword()"
+      >
+        <div class="line" i-ri-heart-line />
+        <div class="fill" i-ri-heart-fill text="red" />
       </button>
     </div>
     <div v-if="searchData" m="l-24 lt-sm:l-0" p="2" class="max-w-2xl">
@@ -143,3 +148,23 @@ const searchKeyword = () => {
     </div>
   </div>
 </template>
+
+<style lang="scss">
+.search-btn {
+  .line {
+    display: block;
+  }
+  .fill {
+    display: none;
+  }
+
+  &:hover {
+    .line {
+      display: none;
+    }
+    .fill {
+      display: block;
+    }
+  }
+}
+</style>
