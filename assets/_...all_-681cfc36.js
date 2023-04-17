@@ -1,0 +1,1 @@
+import{d as o,i as t,o as a,c as _,t as r,f as c,_ as l,b as e}from"./app-d537ed34.js";const n=o({__name:"[...all]",setup(i){const{t:s}=t();return(u,f)=>(a(),_("div",null,r(c(s)("not-found")),1))}});typeof e=="function"&&e(n);const m=l(n,[["__file","/home/runner/work/sese-engine-ui/sese-engine-ui/src/pages/[...all].vue"]]);export{m as default};

@@ -1,0 +1,1 @@
+import{_ as n,o,c as t,b as e}from"./app-d537ed34.js";const s={},c={class:"mt-4"};function r(i,_){return o(),t("div",c," Todo: 设置 ")}typeof e=="function"&&e(s);const f=n(s,[["render",r],["__file","/home/runner/work/sese-engine-ui/sese-engine-ui/src/pages/settings.vue"]]);export{f as default};
