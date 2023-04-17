@@ -2,7 +2,7 @@
   "name": "sese-engine-ui",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@7.8.0",
+  "packageManager": "pnpm@8.2.0",
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open --host",
