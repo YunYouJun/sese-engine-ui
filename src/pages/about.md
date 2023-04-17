@@ -13,11 +13,6 @@ meta:
   <h2 m="t-4">About</h2>
 </div>
 
-<ReadMe />
+<README />
 
-<script lang="ts" setup>
-import ReadMe from '~/../README.md'
-</script>
-
-<br />
 <br />

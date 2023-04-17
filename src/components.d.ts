@@ -11,7 +11,7 @@ declare module '@vue/runtime-core' {
     Footer: typeof import('./components/Footer.vue')['default']
     InputBox: typeof import('./components/InputBox.vue')['default']
     Loading: typeof import('./components/Loading.vue')['default']
-    ResultItem: typeof import('./components/search/ResultItem.vue')['default']
+    README: typeof import('./../README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Settings: typeof import('./components/Settings.vue')['default']
