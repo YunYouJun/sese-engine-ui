@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { search } from '~/api'
 import type { SearchData } from '~/api/types'
+import { search } from '~/api'
 import { useEnter } from '~/composables/search'
-import { useSearchStore } from '~/stores/search'
-
 import { bannerUrl } from '~/config'
+
+import { useSearchStore } from '~/stores/search'
 
 const { t } = useI18n()
 const { enter } = useEnter()
@@ -30,7 +30,7 @@ useHead({
   title: computed(() => `${query.value} - ${t('sese.title')}`),
 })
 
-const searchByParams = async () => {
+async function searchByParams() {
   searchStore.isLoading = true
   const data = await search({
     q: keyword.value,
@@ -44,9 +44,9 @@ onBeforeMount(async () => {
   searchByParams()
 })
 
-const curPage = ref(slice.value ? (parseInt(slice.value?.split(':')[0]) / pageNumber.value) + 1 : 1)
+const curPage = ref(slice.value ? (Number.parseInt(slice.value?.split(':')[0]) / pageNumber.value) + 1 : 1)
 
-const goToPage = (page: number) => {
+function goToPage(page: number) {
   curPage.value = page
   slice.value = `${(curPage.value - 1) * pageNumber.value}:${curPage.value * pageNumber.value}`
 
@@ -75,7 +75,7 @@ const displayedPages = computed(() => {
   else { return 0 }
 })
 
-const searchKeyword = () => {
+function searchKeyword() {
   // reset
   curPage.value = 1
   slice.value = `0:${pageNumber.value}`

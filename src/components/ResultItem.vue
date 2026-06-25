@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { SearchResult } from '~/api/types'
+import { highlightText } from '~/utils/highlight'
 
 const props = defineProps<{
   keywords: string[]
@@ -14,21 +15,6 @@ const query = computed(() => {
   else
     return q
 })
-
-/**
- * 高亮文本
- */
-const highlightedText = (content: string, keywords: string[]) => {
-  // to solve xss
-  let result = content.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-  keywords.forEach((item) => {
-    const re = new RegExp(item, 'gi')
-    result = result.replace(re, (val: string) => {
-      return `<em class="highlight">${val}</em>`
-    })
-  })
-  return result
-}
 
 const domain = computed(() => {
   const url = new URL(props.result['网址'])
@@ -60,7 +46,7 @@ const domainUrl = computed(() =>
           {{ result['信息']['标题'] }}
         </h3>
       </a>
-      <p text="sm" v-html="highlightedText(result['信息']['描述'] || result['信息']['文本'], keywords)" />
+      <p text="sm" v-html="highlightText(result['信息']['描述'] || result['信息']['文本'], keywords)" />
     </template>
     <div v-else>
       <div class="inline-flex justify-start items-center border" p="1" m="1">
@@ -69,20 +55,18 @@ const domainUrl = computed(() =>
       </div>
     </div>
 
-    <Transition>
-      <div
-        class="reason-container absolute top-0 left-180 min-h-full justify-center hidden transition"
-        w="64"
-        opacity="0"
-        flex="~ col"
-      >
-        <blockquote class="search-reason" p="l-2" text="xs">
-          <span v-for="value, key in result['原因']" :key="key" class="block">
-            {{ key }}：{{ value.toFixed(3) }}
-          </span>
-        </blockquote>
-      </div>
-    </Transition>
+    <div
+      class="reason-container absolute top-0 left-180 min-h-full justify-center hidden transition"
+      w="64"
+      opacity="0"
+      flex="~ col"
+    >
+      <blockquote class="search-reason" p="l-2" text="xs">
+        <span v-for="value, key in result['原因']" :key="key" class="block">
+          {{ key }}：{{ value.toFixed(3) }}
+        </span>
+      </blockquote>
+    </div>
   </div>
 </template>
 

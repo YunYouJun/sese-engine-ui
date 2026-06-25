@@ -1,6 +1,6 @@
 import { useSearchStore } from '~/stores/search'
 
-export const useEnter = () => {
+export function useEnter() {
   const search = useSearchStore()
   const router = useRouter()
 

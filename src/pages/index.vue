@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useEnter } from '~/composables/search'
-import { useSearchStore } from '~/stores/search'
-
 import { bannerUrl } from '~/config'
+
+import { useSearchStore } from '~/stores/search'
 
 const { enter } = useEnter()
 const search = useSearchStore()

@@ -1,8 +1,8 @@
+import type { UserModule } from './types'
+import { setupLayouts } from 'virtual:generated-layouts'
+import generatedRoutes from 'virtual:generated-pages'
 // register vue composition api globally
 import { ViteSSG } from 'vite-ssg'
-import generatedRoutes from 'virtual:generated-pages'
-import { setupLayouts } from 'virtual:generated-layouts'
-import type { UserModule } from './types'
 import App from './App.vue'
 
 import '@unocss/reset/tailwind.css'

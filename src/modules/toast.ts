@@ -1,5 +1,5 @@
-import Toast from 'vue-toastification'
 import type { UserModule } from '~/types'
+import Toast from 'vue-toastification'
 
 import 'vue-toastification/dist/index.css'
 

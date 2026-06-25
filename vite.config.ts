@@ -1,18 +1,20 @@
 import path from 'node:path'
-import { defineConfig } from 'vite'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import { unheadVueComposablesImports } from '@unhead/vue'
 import Vue from '@vitejs/plugin-vue'
+import LinkAttributes from 'markdown-it-link-attributes'
+import Prism from 'markdown-it-prism'
+import Unocss from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import Markdown from 'unplugin-vue-markdown/vite'
+import Inspect from 'vite-plugin-inspect'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import Markdown from 'vite-plugin-vue-markdown'
-import VueI18n from '@intlify/unplugin-vue-i18n/vite'
-import Inspect from 'vite-plugin-inspect'
-import Prism from 'markdown-it-prism'
-import LinkAttributes from 'markdown-it-link-attributes'
-import Unocss from 'unocss/vite'
+import { defineConfig } from 'vitest/config'
 
 const markdownWrapperClasses = 'markdown-body max-w-800px prose prose-sm m-auto text-left'
+const externalLinkPattern = /^https?:\/\//
 
 export default defineConfig({
   resolve: {
@@ -39,9 +41,8 @@ export default defineConfig({
         'vue',
         'vue-router',
         'vue-i18n',
-        '@vueuse/head',
         '@vueuse/core',
-        'vitest',
+        unheadVueComposablesImports,
       ],
       dts: 'src/auto-imports.d.ts',
     }),
@@ -64,6 +65,7 @@ export default defineConfig({
     // see unocss.config.ts for config
     Unocss(),
 
+    // https://github.com/unplugin/unplugin-vue-markdown
     Markdown({
       wrapperClasses: markdownWrapperClasses,
       headEnabled: true,
@@ -71,7 +73,7 @@ export default defineConfig({
         // https://prismjs.com/
         md.use(Prism)
         md.use(LinkAttributes, {
-          pattern: /^https?:\/\//,
+          pattern: externalLinkPattern,
           attrs: {
             target: '_blank',
             rel: 'noopener',
@@ -110,22 +112,17 @@ export default defineConfig({
 
   optimizeDeps: {
     include: [
-      'ohmyfetch',
+      'ofetch',
       'vue-toastification',
-    ],
-    exclude: [
-      'vue-demi',
     ],
   },
 
   // https://github.com/vitest-dev/vitest
-  // test: {
-  //   include: ['test/**/*.test.ts'],
-  //   environment: 'jsdom',
-  //   deps: {
-  //     inline: ['@vue', '@vueuse', 'vue-demi'],
-  //   },
-  // },
+  test: {
+    include: ['test/**/*.test.ts', 'src/**/*.test.ts'],
+    environment: 'jsdom',
+    globals: true,
+  },
 
   ssr: {
     // TODO: workaround until they support native ESM
