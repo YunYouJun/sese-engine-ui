@@ -4,9 +4,9 @@
 # deterministic in CI without a version-pinned exclude list.
 minimumReleaseAge: 0
 
-shellEmulator: true
-
-trustPolicy: no-downgrade
+# Don't re-verify dependencies before each `pnpm run` script: CI installs
+# once up front, so the pre-run check only adds a redundant registry round-trip.
+verifyDepsBeforeRun: false
 
 # Allow the native postinstall builds required by the toolchain.
 allowBuilds:
