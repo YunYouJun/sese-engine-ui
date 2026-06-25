@@ -1,0 +1,14 @@
+# https://pnpm.io/settings
+
+# Disable pnpm's release-age gate (default in pnpm 11) so installs stay
+# deterministic in CI without a version-pinned exclude list.
+minimumReleaseAge: 0
+
+shellEmulator: true
+
+trustPolicy: no-downgrade
+
+# Allow the native postinstall builds required by the toolchain.
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true

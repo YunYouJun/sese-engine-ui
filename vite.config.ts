@@ -1,16 +1,16 @@
 import path from 'node:path'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import Shiki from '@shikijs/markdown-it'
 import { unheadVueComposablesImports } from '@unhead/vue'
 import Vue from '@vitejs/plugin-vue'
 import LinkAttributes from 'markdown-it-link-attributes'
-import Prism from 'markdown-it-prism'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Markdown from 'unplugin-vue-markdown/vite'
 import Inspect from 'vite-plugin-inspect'
 import Pages from 'vite-plugin-pages'
-import Layouts from 'vite-plugin-vue-layouts'
+import Layouts from 'vite-plugin-vue-layouts-next'
 import { defineConfig } from 'vitest/config'
 
 const markdownWrapperClasses = 'markdown-body max-w-800px prose prose-sm m-auto text-left'
@@ -32,7 +32,7 @@ export default defineConfig({
       extensions: ['vue', 'md'],
     }),
 
-    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+    // https://github.com/nirtamir2/vite-plugin-vue-layouts-next
     Layouts(),
 
     // https://github.com/antfu/unplugin-auto-import
@@ -69,9 +69,15 @@ export default defineConfig({
     Markdown({
       wrapperClasses: markdownWrapperClasses,
       headEnabled: true,
-      markdownItSetup(md) {
-        // https://prismjs.com/
-        md.use(Prism)
+      async markdownItSetup(md) {
+        // https://shiki.style/
+        md.use(await Shiki({
+          themes: {
+            light: 'vitesse-light',
+            dark: 'vitesse-dark',
+          },
+          defaultColor: false,
+        }))
         md.use(LinkAttributes, {
           pattern: externalLinkPattern,
           attrs: {
