@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { isDark } from '~/composables'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const title = computed(() => t('sese.title'))
 
 // https://github.com/vueuse/head
@@ -9,6 +9,10 @@ const title = computed(() => t('sese.title'))
 // they will be rendered correctly in the html results with vite-ssg
 
 useHead({
+  // keep <html lang> in sync with the active locale (fixes hardcoded lang="en")
+  htmlAttrs: {
+    lang: locale,
+  },
   title,
   meta: [
     { name: 'description', content: 'SeSe Engine 是一个轻量级的搜索引擎，可以轻松部署在自己的个人服务器上。' },
