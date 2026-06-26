@@ -1,0 +1,1 @@
+import{it as e,j as t,m as n,st as r,v as i}from"./vue.runtime.esm-bundler-BiRtiEqs.js";import{i as a,m as o}from"./app-CPOKEntb.js";var s=i({__name:`[...all]`,setup(i){let{t:a}=o();return(i,o)=>(t(),n(`div`,null,r(e(a)(`not-found`)),1))}});typeof a==`function`&&a(s);var c=s;export{c as default};

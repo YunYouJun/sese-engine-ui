@@ -1,0 +1,1 @@
+import{F as e,_ as t,j as n,m as r}from"./vue.runtime.esm-bundler-BiRtiEqs.js";import{t as i}from"./Settings-DuansRHI.js";import{t as a}from"./_plugin-vue_export-helper-BDNMzG2s.js";var o={},s={w:`screen`,h:`screen`,class:`px-4 py-10 text-center`};function c(a,o){let c=i,l=e(`router-view`);return n(),r(`main`,s,[t(c),t(l)])}var l=a(o,[[`render`,c]]);export{l as default};

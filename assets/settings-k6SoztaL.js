@@ -1,0 +1,1 @@
+import{j as e,m as t}from"./vue.runtime.esm-bundler-BiRtiEqs.js";import{i as n}from"./app-CPOKEntb.js";import{t as r}from"./_plugin-vue_export-helper-BDNMzG2s.js";var i={},a={class:`mt-4`};function o(n,r){return e(),t(`div`,a,` Todo: 设置 `)}typeof n==`function`&&n(i);var s=r(i,[[`render`,o]]);export{s as default};

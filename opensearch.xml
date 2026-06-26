@@ -1,0 +1,7 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>Sese</ShortName>
+<Description>Sese 搜索</Description>
+<InputEncoding>UTF-8</InputEncoding>
+<Image width="16" height="16" type="image/x-icon">https://sese.yyj.moe/favicon.svg</Image>
+<Url type="text/html" method="get" template="https://sese.yyj.moe/search?q={searchTerms}"/>
+</OpenSearchDescription>
